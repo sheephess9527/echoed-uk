@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>关于 · echoed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Noto+Serif+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg-0:#07090F;--bg-1:#0B1018;--ink:#EDE9E0;--muted:#7C8694;--faint:#535d6b;
+    --signal:#F0B35E;--signal-soft:rgba(240,179,94,.85);--line:rgba(124,134,148,.14);--maxw:680px;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg-0);color:var(--ink);font-family:"Noto Serif SC",serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .bar{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,28px)}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;
+    padding:clamp(16px,3vw,26px) clamp(20px,5vw,40px);background:rgba(7,9,15,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .wordmark{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(20px,2.4vw,25px);color:var(--ink);text-decoration:none}
+  .wordmark .dot{color:var(--signal)}
+  .navlinks{display:flex;gap:clamp(16px,2.6vw,32px);align-items:center}
+  .navlinks a{font-family:system-ui,sans-serif;font-size:13px;letter-spacing:.06em;color:var(--muted);text-decoration:none;transition:color .35s}
+  .navlinks a:hover,.navlinks a.active{color:var(--ink)}
+  .navlinks a.active{position:relative}
+  .navlinks a.active::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:var(--signal)}
+  .navlinks .quiet-uk{color:var(--faint);font-family:"Fraunces",serif;font-size:13px}
+
+  .head{padding:clamp(130px,20vh,190px) 0 clamp(40px,7vh,64px);text-align:center;position:relative}
+  .head .mono{width:64px;height:64px;margin:0 auto 30px;position:relative}
+  .head .mono span{position:absolute;inset:0;margin:auto;width:8px;height:8px;border-radius:50%;background:var(--signal)}
+  .head .mono i{position:absolute;inset:0;border:1px solid rgba(240,179,94,.4);border-radius:50%;animation:pulse 3.4s ease-out infinite}
+  .head .mono i:nth-child(2){animation-delay:1.13s}
+  .head .mono i:nth-child(3){animation-delay:2.26s}
+  @keyframes pulse{0%{transform:scale(.3);opacity:.9}100%{transform:scale(1.7);opacity:0}}
+  .head .eyebrow{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--signal-soft);margin-bottom:22px}
+  .head h1{font-weight:500;font-size:clamp(30px,5.4vw,48px);line-height:1.32;letter-spacing:.04em;max-width:18ch;margin:0 auto}
+
+  .story{padding:clamp(20px,3vh,30px) 0 clamp(70px,11vh,120px)}
+  .story p{font-weight:300;font-size:clamp(16px,2vw,18px);line-height:2.05;letter-spacing:.02em;color:#cdd3da;margin-bottom:1.7em}
+  .story p b{color:var(--ink);font-weight:500}
+  .story .lead{font-size:clamp(19px,2.6vw,23px);line-height:1.85;color:var(--ink);font-weight:400;margin-bottom:1.6em}
+  .pull{margin:clamp(40px,6vh,60px) 0;padding-left:24px;border-left:2px solid rgba(240,179,94,.5);
+    font-weight:400;font-size:clamp(20px,2.8vw,26px);line-height:1.7;color:var(--ink);letter-spacing:.03em}
+
+  .vals{margin:clamp(44px,7vh,68px) 0;display:grid;gap:0}
+  .vals .v{border-top:1px solid var(--line);padding:24px 0;display:flex;gap:20px;align-items:baseline}
+  .vals .v:last-child{border-bottom:1px solid var(--line)}
+  .vals .n{font-family:"Fraunces",serif;font-size:14px;color:var(--signal-soft);min-width:28px}
+  .vals .k{font-weight:500;font-size:clamp(17px,2.2vw,20px);white-space:nowrap;letter-spacing:.04em}
+  .vals .t{font-weight:300;font-size:clamp(14px,1.7vw,16px);line-height:1.85;color:var(--muted)}
+
+  .sign{margin-top:clamp(40px,6vh,60px);font-family:"Fraunces",serif;font-style:italic;font-size:20px;color:var(--signal-soft)}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:clamp(64px,10vh,100px) 0 44px;background:var(--bg-1)}
+  .fbar{max-width:780px;margin:0 auto;padding:0 clamp(20px,5vw,28px)}
+  .sub-cta{text-align:center;margin-bottom:clamp(50px,8vh,80px)}
+  .sub-cta h3{font-weight:500;font-size:clamp(24px,3.6vw,32px);letter-spacing:.04em}
+  .sub-cta p{margin-top:14px;font-weight:300;font-size:15px;color:var(--muted);line-height:1.8}
+  .subform{margin-top:30px;display:flex;gap:10px;max-width:420px;margin-inline:auto}
+  .subform input{flex:1;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:100px;padding:13px 20px;color:var(--ink);font-family:"Noto Serif SC",serif;font-size:14px;outline:none;transition:border-color .3s}
+  .subform input::placeholder{color:var(--faint)}
+  .subform input:focus{border-color:rgba(240,179,94,.5)}
+  .subform button{background:var(--signal);color:var(--bg-0);border:none;border-radius:100px;padding:13px 26px;font-family:system-ui,sans-serif;font-size:14px;font-weight:600;letter-spacing:.06em;cursor:pointer;transition:opacity .3s}
+  .subform button:hover{opacity:.88}
+  .fbottom{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:30px}
+  .fbottom .wordmark{font-size:20px}
+  .flinks{display:flex;gap:22px;font-family:system-ui,sans-serif;font-size:13px;letter-spacing:.06em}
+  .flinks a{color:var(--muted);text-decoration:none;transition:color .3s}
+  .flinks a:hover{color:var(--ink)}
+  .copy{font-family:system-ui,sans-serif;font-size:12px;color:var(--faint);letter-spacing:.04em;width:100%;margin-top:8px}
+
+  @media (prefers-reduced-motion:reduce){.head .mono i{animation:none;opacity:.4}}
+  @media (max-width:560px){.navlinks .hide-sm{display:none}.fbottom{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="wordmark" href="index.html">echoed<span class="dot">.</span></a>
+  <div class="navlinks">
+    <a href="explore.html">探索回响</a>
+    <a class="active" href="about.html">关于</a>
+    <a href="#subscribe">订阅</a>
+    <span class="quiet-uk">.uk</span>
+  </div>
+</nav>
+
+<header class="head">
+  <div class="bar">
+    <div class="mono"><i></i><i></i><i></i><span></span></div>
+    <div class="eyebrow">关于</div>
+    <h1>我相信，安静里藏着最有力量的东西。</h1>
+  </div>
+</header>
+
+<article class="story">
+  <div class="bar">
+    <p class="lead">很长一段时间里，我每天醒来第一件事就是打开手机，被几百条信息推着往前走，到了晚上却想不起来自己究竟看进去了什么。</p>
+
+    <p>不是信息不够多，是太多了。多到我以为"知道得越多就懂得越多"，直到有一天我意识到——<b>我只是被更多东西经过，而没有真正留下任何东西。</b></p>
+
+    <p>echoed 就是从那个念头里长出来的。它不是又一个让你刷个不停的地方，恰恰相反，它想做的是：在所有声音里，帮你筛掉噪音，只留下那些值得在心里多待一会儿、甚至值得你回头再读一遍的东西。</p>
+
+    <div class="pull">回响，是声音遇到了能接住它的人，才会产生的东西。</div>
+
+    <p>所以这里的每一条内容，都不是因为它"热"，而是因为它在我这里<b>真的激起了一点什么</b>——一个让我停下来的观点、一段想转给朋友的话、一本读完会改变一点点生活方式的书。我把这些叫做"回响"，并附上我为什么选它。比起内容本身，那一句"为什么"，才是我最想给你的东西。</p>
+
+    <p>我没打算让这个站长得很快、火得很大。我只希望，它是你信息生活里一个可以喘口气的角落——安静，但有分量。</p>
+
+    <div class="vals">
+      <div class="v"><span class="n">01</span><span class="k">共鸣 &gt; 噪音</span><span class="t">宁可少说，不说废话。一次真正的共鸣，胜过一百次擦肩而过。</span></div>
+      <div class="v"><span class="n">02</span><span class="k">深度 &gt; 广度</span><span class="t">一件事讲透，胜过十件事各提一句。不求覆盖一切，只求说清一点。</span></div>
+      <div class="v"><span class="n">03</span><span class="k">持久 &gt; 短暂</span><span class="t">不追热点，只留经得起重读的。一年后还会想起的，才值得现在留下。</span></div>
+    </div>
+
+    <p>如果这些话也曾在你心里响过一下，那我们大概是同一类人。欢迎你常来，也欢迎你<a href="#subscribe" style="color:var(--signal-soft);text-decoration:none;border-bottom:1px solid rgba(240,179,94,.3)">留下你的邮箱</a>——让回响，也能传回到我这里。</p>
+
+    <div class="sign">— echoed</div>
+  </div>
+</article>
+
+<footer id="subscribe">
+  <div class="fbar">
+    <div class="sub-cta">
+      <h3>让回响传回来</h3>
+      <p>偶尔一封信，只在有真正值得分享的东西时。不打扰，可随时退订。</p>
+      <div class="subform">
+        <input type="email" placeholder="你的邮箱" aria-label="邮箱">
+        <button type="button" onclick="this.textContent='已收到 ✓'">订阅</button>
+      </div>
+    </div>
+    <div class="fbottom">
+      <a class="wordmark" href="index.html">echoed<span class="dot">.</span></a>
+      <div class="flinks">
+        <a href="explore.html">探索</a>
+        <a href="about.html">关于</a>
+        <a href="#">RSS</a>
+        <a href="#">邮箱</a>
+      </div>
+      <div class="copy">© 2026 echoed.uk · 在噪音中，寻找信号</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

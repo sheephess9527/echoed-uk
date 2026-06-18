@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>探索回响 · echoed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Noto+Serif+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg-0:#07090F;--bg-1:#0B1018;--ink:#EDE9E0;--muted:#7C8694;--faint:#535d6b;
+    --signal:#F0B35E;--signal-soft:rgba(240,179,94,.85);--line:rgba(124,134,148,.14);--maxw:760px;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:radial-gradient(100% 60% at 50% -10%,var(--bg-1) 0%,var(--bg-0) 55%,#05070B 100%);
+    color:var(--ink);font-family:"Noto Serif SC",serif;-webkit-font-smoothing:antialiased;min-height:100vh}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:radial-gradient(rgba(124,134,148,.10) 1px,transparent 1px);background-size:34px 34px;
+    -webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 25%,transparent 75%);mask-image:radial-gradient(120% 90% at 50% 0%,#000 25%,transparent 75%);opacity:.5}
+  .bar{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,28px)}
+  .wrap{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:clamp(20px,4vw,40px) clamp(20px,5vw,28px) 0}
+
+  nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:clamp(48px,9vh,96px)}
+  .wordmark{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(19px,2.4vw,24px);color:var(--ink);text-decoration:none}
+  .wordmark .dot{color:var(--signal)}
+  .navlinks{display:flex;gap:clamp(16px,2.6vw,30px);align-items:center}
+  .navlinks a{font-family:system-ui,sans-serif;font-size:13px;letter-spacing:.06em;color:var(--muted);text-decoration:none;transition:color .35s}
+  .navlinks a:hover,.navlinks a.active{color:var(--ink)}
+  .navlinks a.active{position:relative}
+  .navlinks a.active::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:var(--signal)}
+  .navlinks .quiet-uk{color:var(--faint);font-family:"Fraunces",serif;font-size:13px}
+
+  .phead{margin-bottom:clamp(34px,5vh,52px)}
+  .phead .eyebrow{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--signal-soft);margin-bottom:18px}
+  .phead h1{font-weight:500;font-size:clamp(32px,5.6vw,52px);letter-spacing:.04em;line-height:1.2}
+  .phead p{margin-top:16px;font-weight:300;font-size:clamp(15px,1.8vw,17px);line-height:1.9;color:var(--muted);max-width:46ch}
+
+  .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:clamp(30px,5vh,46px)}
+  .chip{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.08em;color:var(--muted);background:transparent;
+    border:1px solid var(--line);border-radius:100px;padding:7px 16px;cursor:pointer;transition:all .3s}
+  .chip:hover{color:var(--ink);border-color:rgba(124,134,148,.4)}
+  .chip.on{color:var(--bg-0);background:var(--signal);border-color:var(--signal);font-weight:500}
+
+  .feed{position:relative}
+  .feed::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:linear-gradient(var(--line),rgba(240,179,94,.18),var(--line))}
+  .echo{position:relative;padding:0 0 clamp(34px,5vh,48px) clamp(30px,5vw,42px);opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s}
+  .echo.show{opacity:1;transform:none}
+  .echo::before{content:"";position:absolute;left:0;top:9px;width:11px;height:11px;border-radius:50%;background:var(--bg-0);border:1px solid rgba(240,179,94,.5);box-shadow:0 0 0 4px var(--bg-0)}
+  .echo:hover::before{background:var(--signal);box-shadow:0 0 14px 2px rgba(240,179,94,.4),0 0 0 4px var(--bg-0)}
+  .echo.hidden{display:none}
+  .meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.1em;color:var(--faint);margin-bottom:14px}
+  .meta .cat{color:var(--signal-soft);text-transform:uppercase}
+  .meta .d{width:3px;height:3px;border-radius:50%;background:var(--faint)}
+  .src{display:inline-flex;align-items:baseline;gap:10px;text-decoration:none;font-weight:400;font-size:clamp(18px,2.4vw,22px);line-height:1.45;color:var(--ink);transition:color .3s}
+  .src:hover{color:var(--signal)}
+  .src .out{font-family:"Fraunces",serif;color:var(--faint);font-size:.85em;transition:color .3s,transform .3s;display:inline-block}
+  .src:hover .out{color:var(--signal);transform:translate(2px,-2px)}
+  .note{margin-top:14px;padding-left:16px;border-left:2px solid rgba(240,179,94,.45);font-weight:300;font-size:clamp(15px,1.85vw,17px);line-height:1.95;color:#cdd3da}
+  .note b{color:var(--ink);font-weight:500}
+  .tags{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap}
+  .tags span{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.06em;color:var(--faint)}
+  .tags span::before{content:"#";opacity:.5}
+  .more{margin-top:8px;text-align:center}
+  .more a{font-family:system-ui,sans-serif;font-size:13px;letter-spacing:.16em;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:100px;padding:12px 26px;transition:all .3s;display:inline-block}
+  .more a:hover{color:var(--ink);border-color:rgba(240,179,94,.4)}
+
+  footer{position:relative;z-index:1;border-top:1px solid var(--line);margin-top:clamp(70px,11vh,110px);padding:clamp(60px,9vh,90px) 0 44px;background:var(--bg-1)}
+  .sub-cta{text-align:center;margin-bottom:clamp(50px,8vh,76px)}
+  .sub-cta h3{font-weight:500;font-size:clamp(24px,3.6vw,32px);letter-spacing:.04em}
+  .sub-cta p{margin-top:14px;font-weight:300;font-size:15px;color:var(--muted);line-height:1.8}
+  .subform{margin-top:30px;display:flex;gap:10px;max-width:420px;margin-inline:auto}
+  .subform input{flex:1;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:100px;padding:13px 20px;color:var(--ink);font-family:"Noto Serif SC",serif;font-size:14px;outline:none;transition:border-color .3s}
+  .subform input::placeholder{color:var(--faint)}
+  .subform input:focus{border-color:rgba(240,179,94,.5)}
+  .subform button{background:var(--signal);color:var(--bg-0);border:none;border-radius:100px;padding:13px 26px;font-family:system-ui,sans-serif;font-size:14px;font-weight:600;letter-spacing:.06em;cursor:pointer;transition:opacity .3s}
+  .subform button:hover{opacity:.88}
+  .fbottom{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:30px}
+  .fbottom .wordmark{font-size:20px}
+  .flinks{display:flex;gap:22px;font-family:system-ui,sans-serif;font-size:13px;letter-spacing:.06em}
+  .flinks a{color:var(--muted);text-decoration:none;transition:color .3s}
+  .flinks a:hover{color:var(--ink)}
+  .copy{font-family:system-ui,sans-serif;font-size:12px;color:var(--faint);letter-spacing:.04em;width:100%;margin-top:8px}
+
+  @media (prefers-reduced-motion:reduce){.echo{opacity:1;transform:none}}
+  @media (max-width:560px){.navlinks .hide-sm{display:none}.fbottom{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="wordmark" href="index.html">echoed<span class="dot">.</span></a>
+    <div class="navlinks">
+      <a class="active" href="explore.html">探索回响</a>
+      <a class="hide-sm" href="about.html">关于</a>
+      <a href="#subscribe">订阅</a>
+      <span class="quiet-uk">.uk</span>
+    </div>
+  </nav>
+
+  <header class="phead">
+    <div class="eyebrow">探索回响</div>
+    <h1>值得停下来的，<br>都在这里。</h1>
+    <p>每一条，都是我读到、听到、想过之后，觉得值得为你留下的回响。不求多，只求每一条都经得起重读。</p>
+  </header>
+
+  <div class="filters">
+    <button class="chip on" data-f="all">全部</button>
+    <button class="chip" data-f="文章">文章</button>
+    <button class="chip" data-f="观点">观点</button>
+    <button class="chip" data-f="对话">对话</button>
+    <button class="chip" data-f="书">书</button>
+  </div>
+
+  <div class="feed" id="feed">
+
+    <article class="echo" data-cat="文章">
+      <div class="meta"><span class="cat">文章</span><span class="d"></span><span>长读</span><span class="d"></span><span>2026 · 03</span></div>
+      <a class="src" href="echo-signal.html">如何在噪音里，认出属于你的那个信号 <span class="out">↗</span></a>
+      <p class="note">这是我自己写的一条。它给了一个朴素的检验标准：<b>一个月后还会想起的，才是信号；当下让你激动、转头就忘的，多半是噪音。</b>写下它，也是为了确认自己想做这个站的原因。</p>
+      <div class="tags"><span>信号</span><span>判断</span></div>
+    </article>
+
+    <article class="echo" data-cat="观点">
+      <div class="meta"><span class="cat">观点</span><span class="d"></span><span>随笔</span><span class="d"></span><span>2026 · 06</span></div>
+      <a class="src" href="#">我们误把"更多信息"当成了"更懂" <span class="out">↗</span></a>
+      <p class="note">这篇说中了一件很多人没察觉的事：<b>信息的增加并不自动变成理解，反而常常稀释它。</b>真正的理解需要停顿、需要重读、需要让一个念头在心里多待一会儿——而这恰恰是信息洪流最不允许的。</p>
+      <div class="tags"><span>注意力</span><span>认知</span></div>
+    </article>
+
+    <article class="echo" data-cat="文章">
+      <div class="meta"><span class="cat">文章</span><span class="d"></span><span>长读</span><span class="d"></span><span>2026 · 05</span></div>
+      <a class="src" href="#">慢，是一种被低估的能力 <span class="out">↗</span></a>
+      <p class="note">作者把"慢"从一种生活方式，重新定义成一种<b>判断力</b>：在所有人都急着反应时，能多等三天再下结论的人，往往看得更准。我选它，是因为它没有贩卖焦虑，而是给了你一个安静的理由。</p>
+      <div class="tags"><span>深度</span><span>节奏</span></div>
+    </article>
+
+    <article class="echo" data-cat="对话">
+      <div class="meta"><span class="cat">对话</span><span class="d"></span><span>访谈</span><span class="d"></span><span>2026 · 05</span></div>
+      <a class="src" href="#">一位手艺人聊"为什么要做得这么慢" <span class="out">↗</span></a>
+      <p class="note">整段对话里最打动我的，是他说自己从不追求被更多人看见，只在意做出来的东西能不能<b>留得久一点</b>。这种"持久优于短暂"的态度，比任何方法论都更接近 echoed 想说的东西。</p>
+      <div class="tags"><span>手艺</span><span>持久</span></div>
+    </article>
+
+    <article class="echo" data-cat="书">
+      <div class="meta"><span class="cat">书</span><span class="d"></span><span>荐读</span><span class="d"></span><span>2026 · 04</span></div>
+      <a class="src" href="#">《把世界调成静音之后》 <span class="out">↗</span></a>
+      <p class="note">一本关于"如何重新听见自己"的书。它不教你戒手机，而是问了一个更狠的问题：<b>当噪音停下来，你还知道自己真正想听什么吗？</b>读完那晚我把通知全关了——这是我能给一本书最高的评价。</p>
+      <div class="tags"><span>专注</span><span>内观</span></div>
+    </article>
+
+    <article class="echo" data-cat="观点">
+      <div class="meta"><span class="cat">观点</span><span class="d"></span><span>短评</span><span class="d"></span><span>2026 · 04</span></div>
+      <a class="src" href="#">不必什么都回应 <span class="out">↗</span></a>
+      <p class="note">很短的一段话，却像一记轻钟：<b>沉默不是缺席，挑选要不要发声本身就是一种表达。</b>在一个鼓励人对一切都即时表态的环境里，懂得"不回应"反而成了稀缺的力量。这一条，献给所有觉得自己说得太多的人。</p>
+      <div class="tags"><span>克制</span><span>共鸣</span></div>
+    </article>
+
+  </div>
+
+  <div class="more"><a href="#">更早的回响 →</a></div>
+</div>
+
+<footer id="subscribe">
+  <div class="bar">
+    <div class="sub-cta">
+      <h3>让回响传回来</h3>
+      <p>偶尔一封信，只在有真正值得分享的东西时。不打扰，可随时退订。</p>
+      <div class="subform">
+        <input type="email" placeholder="你的邮箱" aria-label="邮箱">
+        <button type="button" onclick="this.textContent='已收到 ✓'">订阅</button>
+      </div>
+    </div>
+    <div class="fbottom">
+      <a class="wordmark" href="index.html">echoed<span class="dot">.</span></a>
+      <div class="flinks">
+        <a href="explore.html">探索</a>
+        <a href="about.html">关于</a>
+        <a href="#">RSS</a>
+        <a href="#">邮箱</a>
+      </div>
+      <div class="copy">© 2026 echoed.uk · 在噪音中，寻找信号</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const chips=document.querySelectorAll('.chip');
+  const items=document.querySelectorAll('.echo');
+  chips.forEach(c=>c.addEventListener('click',()=>{
+    chips.forEach(x=>x.classList.remove('on'));c.classList.add('on');
+    const f=c.dataset.f;
+    items.forEach(it=>it.classList.toggle('hidden',!(f==='all'||it.dataset.cat===f)));
+  }));
+  const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(reduce){items.forEach(i=>i.classList.add('show'));}
+  else{
+    const io=new IntersectionObserver((es)=>{es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('show'),i*90);io.unobserve(e.target);}});},{threshold:.15});
+    items.forEach(i=>io.observe(i));
+  }
+</script>
+</body>
+</html>
