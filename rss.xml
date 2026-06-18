@@ -6,7 +6,52 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 18 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jun 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>我们误把「更多信息」当成了「更懂」</title>
+      <link>https://echoed.uk/echo-information.html</link>
+      <guid>https://echoed.uk/echo-information.html</guid>
+      <category>观点</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <description>拥有更多信息和真正理解一件事，是两件完全不同的事。信息是原材料，理解才是成品——而从前者到后者，中间需要一道几乎被我们省掉的工序。</description>
+    </item>
+
+    <item>
+      <title>慢，是一种被低估的能力</title>
+      <link>https://echoed.uk/echo-slow.html</link>
+      <guid>https://echoed.uk/echo-slow.html</guid>
+      <category>文章</category>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+      <description>我们被训练成快速反应。但真正准确的判断，几乎从不来自最快的那次回应。慢不是节奏，而是一种判断力：知道什么时候值得慢。</description>
+    </item>
+
+    <item>
+      <title>一位装帧师聊「为什么要做得这么慢」</title>
+      <link>https://echoed.uk/echo-craftsman.html</link>
+      <guid>https://echoed.uk/echo-craftsman.html</guid>
+      <category>对话</category>
+      <pubDate>Fri, 15 May 2026 00:00:00 +0000</pubDate>
+      <description>他用手工装订书，一本要花三到四天。我问他：机器一天能做几百本，你为什么不用机器？他说：你问的是速度，但我做的是别的事。</description>
+    </item>
+
+    <item>
+      <title>读《深度工作》：专注，是这个时代最稀缺的能力</title>
+      <link>https://echoed.uk/echo-deep-work.html</link>
+      <guid>https://echoed.uk/echo-deep-work.html</guid>
+      <category>书</category>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <description>Cal Newport 的这本书不教你时间管理，它只问你一个更根本的问题：你有多久没有真正、完全地投入一件事了？</description>
+    </item>
+
+    <item>
+      <title>不必什么都回应</title>
+      <link>https://echoed.uk/echo-silence.html</link>
+      <guid>https://echoed.uk/echo-silence.html</guid>
+      <category>观点</category>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <description>沉默不是缺席，挑选要不要发声本身就是一种表达。在一个鼓励人对一切都即时表态的环境里，懂得「不回应」反而成了稀缺的力量。</description>
+    </item>
 
     <item>
       <title>如何在噪音里，认出属于你的那个信号</title>

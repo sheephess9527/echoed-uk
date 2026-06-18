@@ -3,26 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>如何在噪音里，认出属于你的那个信号 · echoed</title>
-<meta name="description" content="一个朴素的检验标准：一个月后还会主动想起的，才是信号；当下让你激动、转头就忘的，多半是噪音。在噪音里认出信号，不是信息技巧，而是一种生活态度。">
+<title>我们误把「更多信息」当成了「更懂」· echoed</title>
+<meta name="description" content="拥有更多信息和真正理解一件事，是两件完全不同的事。我们花了太多精力在前者，却几乎没有时间给后者。">
 <meta name="theme-color" content="#07090F">
-<link rel="canonical" href="https://echoed.uk/echo-signal.html">
+<link rel="canonical" href="https://echoed.uk/echo-information.html">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="alternate" type="application/rss+xml" title="echoed RSS" href="rss.xml">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="echoed.uk">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-03-01">
+<meta property="article:published_time" content="2026-06-01">
 <meta property="article:author" content="echoed">
-<meta property="og:title" content="如何在噪音里，认出属于你的那个信号">
-<meta property="og:description" content="一个朴素的检验标准：一个月后还会主动想起的，才是信号；当下让你激动、转头就忘的，多半是噪音。">
-<meta property="og:url" content="https://echoed.uk/echo-signal.html">
+<meta property="og:title" content="我们误把「更多信息」当成了「更懂」">
+<meta property="og:description" content="拥有更多信息和真正理解一件事，是两件完全不同的事。信息是原材料，理解才是成品——而从前者到后者，中间需要一道几乎被我们省掉的工序。">
+<meta property="og:url" content="https://echoed.uk/echo-information.html">
 <meta property="og:image" content="https://echoed.uk/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="如何在噪音里，认出属于你的那个信号">
-<meta name="twitter:description" content="一个朴素的检验标准：一个月后还会主动想起的，才是信号；当下让你激动、转头就忘的，多半是噪音。">
+<meta name="twitter:title" content="我们误把「更多信息」当成了「更懂」">
+<meta name="twitter:description" content="信息是原材料，理解才是成品——而从前者到后者，中间需要一道几乎被我们省掉的工序。">
 <meta name="twitter:image" content="https://echoed.uk/assets/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,10 +34,7 @@
   html{scroll-behavior:smooth}
   body{background:var(--bg-0);color:var(--ink);font-family:"Noto Serif SC",serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   .bar{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,28px)}
-
-  /* reading progress */
   #prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--signal);z-index:30;transition:width .1s linear}
-
   nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;
     padding:clamp(16px,3vw,24px) clamp(20px,5vw,40px);background:rgba(7,9,15,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .wordmark{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(20px,2.4vw,25px);color:var(--ink);text-decoration:none}
@@ -46,11 +43,9 @@
   .navlinks a{font-family:system-ui,sans-serif;font-size:13px;letter-spacing:.06em;color:var(--muted);text-decoration:none;transition:color .35s}
   .navlinks a:hover{color:var(--ink)}
   .navlinks .quiet-uk{color:var(--faint);font-family:"Fraunces",serif;font-size:13px}
-
   .back{display:inline-flex;align-items:center;gap:8px;margin-top:clamp(100px,16vh,150px);
     font-family:system-ui,sans-serif;font-size:13px;letter-spacing:.1em;color:var(--muted);text-decoration:none;transition:color .3s}
   .back:hover{color:var(--signal)}
-
   .ahead{padding:clamp(24px,4vh,38px) 0 clamp(34px,5vh,50px);border-bottom:1px solid var(--line)}
   .ahead .meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-family:system-ui,sans-serif;
     font-size:11.5px;letter-spacing:.1em;color:var(--faint);margin-bottom:22px}
@@ -58,14 +53,12 @@
   .ahead .meta .d{width:3px;height:3px;border-radius:50%;background:var(--faint)}
   .ahead h1{font-weight:500;font-size:clamp(30px,5.2vw,46px);line-height:1.32;letter-spacing:.03em}
   .ahead .stand{margin-top:22px;font-weight:300;font-size:clamp(16px,2vw,19px);line-height:1.85;color:var(--muted)}
-
   article{padding:clamp(40px,6vh,60px) 0 clamp(20px,3vh,30px)}
   article p{font-weight:300;font-size:clamp(16px,2vw,18px);line-height:2.1;letter-spacing:.02em;color:#cdd3da;margin-bottom:1.7em}
   article p b{color:var(--ink);font-weight:500}
   article h2{font-weight:500;font-size:clamp(20px,2.8vw,25px);letter-spacing:.04em;margin:2.2em 0 1em;color:var(--ink)}
   .pull{margin:clamp(36px,5vh,52px) 0;padding-left:24px;border-left:2px solid rgba(240,179,94,.5);
     font-weight:400;font-size:clamp(20px,2.8vw,25px);line-height:1.7;color:var(--ink);letter-spacing:.03em}
-
   .endnote{margin-top:clamp(44px,6vh,64px);padding-top:30px;border-top:1px solid var(--line)}
   .endnote .who{display:flex;align-items:center;gap:14px}
   .endnote .av{width:40px;height:40px;border-radius:50%;border:1px solid rgba(240,179,94,.4);position:relative;flex:none}
@@ -73,7 +66,6 @@
   .endnote .who .nm{font-family:"Fraunces",serif;font-size:16px;color:var(--ink)}
   .endnote .who .tg{font-family:system-ui,sans-serif;font-size:12px;color:var(--faint);letter-spacing:.06em;margin-top:2px}
   .endnote .line{margin-top:20px;font-weight:300;font-size:15px;line-height:1.9;color:var(--muted)}
-
   .next{margin-top:clamp(50px,8vh,80px)}
   .next .lbl{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--faint);margin-bottom:18px}
   .next a{display:block;text-decoration:none;border-top:1px solid var(--line);padding:22px 0;transition:padding-left .35s}
@@ -81,8 +73,6 @@
   .next a .t{font-weight:400;font-size:clamp(17px,2.2vw,21px);color:var(--ink);transition:color .3s}
   .next a:hover .t{color:var(--signal)}
   .next a .m{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.1em;color:var(--faint);margin-bottom:8px}
-
-  /* footer (compact) */
   footer{margin-top:clamp(70px,11vh,120px);border-top:1px solid var(--line);padding:48px 0 40px;background:var(--bg-1)}
   .fbottom{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
   .fbottom .wordmark{font-size:20px}
@@ -112,57 +102,75 @@
 
 <header class="ahead">
   <div class="bar">
-    <div class="meta"><span class="cat">文章</span><span class="d"></span><span>长读</span><span class="d"></span><span>2026 · 03</span><span class="d"></span><span>约 4 分钟</span></div>
-    <h1>如何在噪音里，认出属于你的那个信号</h1>
-    <p class="stand">我们都被教会了如何获取更多信息，却几乎没人教过我们：当信息多到溢出来时，该怎么挑。</p>
+    <div class="meta"><span class="cat">观点</span><span class="d"></span><span>随笔</span><span class="d"></span><span>2026 · 06</span><span class="d"></span><span>约 5 分钟</span></div>
+    <h1>我们误把「更多信息」当成了「更懂」</h1>
+    <p class="stand">拥有更多信息和真正理解一件事，是两件完全不同的事。我们花了太多精力在前者，却几乎没有时间给后者。</p>
   </div>
 </header>
 
 <article>
   <div class="bar">
-    <p>有一阵子，我给自己定了个规矩：每天睡前，回想当天看过的所有内容里，<b>还剩下哪一条留在脑子里</b>。结果常常令我尴尬——刷了几个小时，到了晚上，竟一条都想不起来。</p>
 
-    <p>那种感觉很奇怪。明明每一条当下都觉得"有点意思""值得一看"，可它们像水一样从指缝流走，什么也没留下。后来我才明白，问题不在内容，在我没有一把尺子，去分辨什么是信号，什么只是噪音。</p>
+    <p>有个测验，我经常拿来问自己：假设你刚刚读完一篇文章，觉得「很有道理」——那么，你能不能用自己的话，向一个没读过的人讲清楚它？</p>
 
-    <h2>噪音，是当下的；信号，是会回来的</h2>
+    <p>多数时候，我讲不清楚。</p>
 
-    <p>我慢慢摸索出一个朴素到近乎好笑的标准：<b>一个月后，我还会主动想起的，才是信号；当下让我激动、转头就忘的，多半是噪音。</b></p>
+    <p>不是因为我没认真读，而是因为我只是让那些文字从眼前经过了，并没有真正「拿住」它。这种感觉很熟悉：点开文章时兴趣盎然，读完后觉得有所收获，但三天后问我它说了什么，我只能给你一个模糊的轮廓——甚至连轮廓都没有，只剩一个「好像挺不错」的印象。</p>
 
-    <p>噪音的特点是即时满足：它给你一阵情绪——愤怒、惊讶、好笑、焦虑——然后迅速过期。它要的是你此刻的注意力，而不是你长久的记忆。信号则相反，它当下可能并不抓人，甚至有点平淡，但它会在某个意想不到的时刻悄悄回来：你在做别的事，忽然想起那句话、那个观点、那本书里的某一页。</p>
+    <p>认知科学里有个词叫「流畅性错觉」（fluency illusion）：当我们觉得读懂了，往往只是因为文字本身读起来顺畅，而不是因为内容真的被我们消化了。一个句子读起来顺，不等于你理解了它背后的逻辑；一个观点听起来有道理，不等于你能用它做出更好的判断。</p>
 
-    <div class="pull">真正重要的东西，往往不是冲进来的，而是留下来的。</div>
+    <h2>信息，是原材料</h2>
 
-    <p>这也是为什么我越来越不相信"实时"。一条信息如果只有在它发生的那一刻才有意义，那它大概率是噪音。而那些经得起放上几天、几周、甚至几年再读的东西，时间会替你把它们筛出来。</p>
+    <p>信息本身不是理解，只是原材料。就像面粉不是面包，矿石不是钢铁。从原材料到成品，中间需要一道工序——而这道工序，在今天的信息环境里几乎被完全省掉了。</p>
 
-    <h2>少接收，多回味</h2>
+    <p>这道工序是什么？</p>
 
-    <p>认出信号之后，更难的是<b>对噪音说不</b>。我们害怕错过，于是什么都想看一眼，结果什么都没看进去。但注意力是有总量的，你花在噪音上的每一分钟，都是从信号那里偷来的。</p>
+    <p>是停顿。是困惑。是重读。是把一个念头在脑子里多放一会儿，看看它和你已经知道的东西能不能拼在一起，在哪里拼不上、在哪里多出了新的接缝。是那种「我还没想清楚」的不舒服感——而不是「好的，下一条」。</p>
 
-    <p>所以我开始反着来：与其多接收，不如多回味。看完一篇真正好的东西，我会停下来，不急着打开下一条，让它在心里多待一会儿。这个"待一会儿"的动作，听起来微不足道，却是把信息变成理解的唯一办法。</p>
+    <p>问题是，「下一条」太容易了。刷动一下，新的来了。信息来得又快又顺，让我们几乎没有机会在任何一件事上停留得足够久，去真正地把它转化成自己的东西。</p>
 
-    <p>说到底，在噪音里认出信号，不是一种信息技巧，而是一种<b>生活态度</b>：你愿不愿意，在所有人都急着接收下一条的时候，慢下来，只为那真正重要的少数，留出位置。</p>
+    <div class="pull">真正的理解，是你能用这件事做什么，而不是你知道这件事。</div>
 
-    <p>这，也正是我做 echoed 的全部理由。</p>
+    <h2>理解，需要阻力</h2>
+
+    <p>有一个反直觉的事实：<b>让学习变难一点，往往能让理解变得更深。</b></p>
+
+    <p>心理学里叫「合意困难」（desirable difficulties）：测验自己比重读笔记更有效；间隔复习比集中学习记得更久；用自己的话重新表述，比抄下原句更能让你真正掌握一个概念。</p>
+
+    <p>这些方法有一个共同点：它们都制造了摩擦。而我们现在的信息习惯，恰恰是在系统性地消除一切摩擦——更快的加载速度、更顺畅的滑动、更简短的内容。让你永远不必在一件事上停下来，永远可以轻松地抵达下一条。</p>
+
+    <p>但理解，偏偏需要摩擦。</p>
+
+    <h2>少读，但真正读进去</h2>
+
+    <p>我不是在劝你远离信息，而是想说：信息的量，和你从中获得的理解，不是线性关系。超过某个点之后，多读一篇不会让你更懂，只会让你更忙。</p>
+
+    <p>真正值得的做法，是找到那少数几件事——值得你花时间困惑、重读、在脑子里翻来覆去——然后把你有限的注意力，给这些事。</p>
+
+    <p>一篇读懂了的文章，比十篇一知半解的，更接近真正的理解。</p>
+
+    <p><b>理解的反面不是无知，而是以为自己懂了。</b></p>
 
     <div class="endnote">
       <div class="who">
         <div class="av"></div>
         <div><div class="nm">echoed</div><div class="tg">在噪音中，寻找信号</div></div>
       </div>
-      <div class="line">这是我自己写下的一条回响。如果它在你心里也响了一下，欢迎订阅——我只在有真正值得分享的东西时，才写一封信给你。</div>
+      <div class="line">这篇是我自己的困惑写成的文字。如果它也说中了你，欢迎订阅——我只在有真正值得分享的东西时，才写一封信给你。</div>
     </div>
 
     <div class="next">
       <div class="lbl">下一条回响</div>
-      <a href="echo-information.html">
-        <div class="m">观点 · 随笔 · 2026 · 06</div>
-        <div class="t">我们误把「更多信息」当成了「更懂」</div>
-      </a>
       <a href="echo-slow.html">
         <div class="m">文章 · 随笔 · 2026 · 05</div>
         <div class="t">慢，是一种被低估的能力</div>
       </a>
+      <a href="echo-craftsman.html">
+        <div class="m">对话 · 访谈 · 2026 · 05</div>
+        <div class="t">一位装帧师聊「为什么要做得这么慢」</div>
+      </a>
     </div>
+
   </div>
 </article>
 
@@ -185,8 +193,7 @@
   const prog=document.getElementById('prog');
   addEventListener('scroll',()=>{
     const h=document.documentElement;
-    const p=h.scrollTop/(h.scrollHeight-h.clientHeight);
-    prog.style.width=(p*100)+'%';
+    prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
   });
 </script>
 </body>
