@@ -4,6 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>echoed · 在噪音中，寻找信号</title>
+<meta name="description" content="echoed —— 一个安静的个人策展站。在信息噪音里筛掉噪音，只留下值得回响的少数。共鸣 ＞ 噪音 · 深度 ＞ 广度 · 持久 ＞ 短暂。">
+<meta name="theme-color" content="#07090F">
+<link rel="canonical" href="https://echoed.uk/">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="alternate" type="application/rss+xml" title="echoed RSS" href="rss.xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="echoed.uk">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="echoed · 在噪音中，寻找信号">
+<meta property="og:description" content="信息太多，值得回响的太少。我帮你找到后者。">
+<meta property="og:url" content="https://echoed.uk/">
+<meta property="og:image" content="https://echoed.uk/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="echoed · 在噪音中，寻找信号">
+<meta name="twitter:description" content="信息太多，值得回响的太少。我帮你找到后者。">
+<meta name="twitter:image" content="https://echoed.uk/assets/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Noto+Serif+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -213,7 +231,7 @@
       <p>偶尔一封信，只在有真正值得分享的东西时。不打扰，可随时退订。</p>
       <div class="subform">
         <input type="email" placeholder="你的邮箱" aria-label="邮箱">
-        <button type="button" onclick="this.textContent='已收到 ✓'">订阅</button>
+        <button type="button" onclick="subscribe(this)">订阅</button>
       </div>
     </div>
     <div class="fbottom">
@@ -221,8 +239,8 @@
       <div class="flinks">
         <a href="explore.html">探索</a>
         <a href="about.html">关于</a>
-        <a href="#">RSS</a>
-        <a href="#">邮箱</a>
+        <a href="rss.xml">RSS</a>
+        <a href="mailto:hello@echoed.uk">邮箱</a>
       </div>
       <div class="copy">© 2026 echoed.uk · 在噪音中，寻找信号</div>
     </div>
@@ -280,6 +298,15 @@
       hero.addEventListener('pointerdown',e=>{const r=hero.getBoundingClientRect();spawn((e.clientX-r.left)*DPR,(e.clientY-r.top)*DPR,1.15);});
       frame();}
   })();
+</script>
+<script>
+  function subscribe(btn){
+    var input=btn.previousElementSibling;
+    var ok=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test((input.value||'').trim());
+    if(!ok){input.focus();input.style.borderColor='rgba(240,179,94,.7)';return;}
+    input.disabled=true;btn.disabled=true;btn.style.opacity='.7';
+    btn.textContent='已收到 ✓';
+  }
 </script>
 </body>
 </html>

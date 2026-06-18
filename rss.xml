@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>echoed · 在噪音中，寻找信号</title>
+    <link>https://echoed.uk/</link>
+    <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 18 Jun 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>如何在噪音里，认出属于你的那个信号</title>
+      <link>https://echoed.uk/echo-signal.html</link>
+      <guid>https://echoed.uk/echo-signal.html</guid>
+      <category>文章</category>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+      <description>一个朴素的检验标准：一个月后还会主动想起的，才是信号；当下让你激动、转头就忘的，多半是噪音。</description>
+    </item>
+
+  </channel>
+</rss>
