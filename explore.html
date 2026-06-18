@@ -2,13 +2,19 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <script>(function(){try{var t=localStorage.getItem("echoed-theme")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
 <title>探索回响 · echoed</title>
 <meta name="description" content="按类型筛选的策展精选——文章、观点、对话、书。每一条都是我读到、想过之后，觉得值得为你留下的回响。不求多，只求每一条都经得起重读。">
 <meta name="theme-color" content="#F6F2E8">
 <link rel="canonical" href="https://echoed.uk/explore.html">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="echoed">
 <link rel="alternate" type="application/rss+xml" title="echoed RSS" href="rss.xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="echoed.uk">
@@ -116,6 +122,11 @@
 
   @media (prefers-reduced-motion:reduce){.echo{opacity:1;transform:none}}
   @media (max-width:560px){.navlinks .hide-sm{display:none}.fbottom{flex-direction:column;align-items:flex-start}}
+
+  @media (display-mode:standalone){
+    .wrap{padding-left:max(clamp(20px,5vw,28px),env(safe-area-inset-left));padding-right:max(clamp(20px,5vw,28px),env(safe-area-inset-right))}
+    footer{padding-bottom:calc(env(safe-area-inset-bottom) + 40px)}
+  }
 </style>
 </head>
 <body>

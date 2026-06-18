@@ -2,13 +2,19 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <script>(function(){try{var t=localStorage.getItem("echoed-theme")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
 <title>关于 · echoed</title>
 <meta name="description" content="echoed 的故事：我也曾被信息淹没，直到我开始只为少数真正重要的东西留出位置。这里是那个安静、但有分量的角落。">
 <meta name="theme-color" content="#F6F2E8">
 <link rel="canonical" href="https://echoed.uk/about.html">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="echoed">
 <link rel="alternate" type="application/rss+xml" title="echoed RSS" href="rss.xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="echoed.uk">
@@ -106,6 +112,11 @@
 
   @media (prefers-reduced-motion:reduce){.head .mono i{animation:none;opacity:.4}}
   @media (max-width:560px){.navlinks .hide-sm{display:none}.fbottom{flex-direction:column;align-items:flex-start}}
+
+  @media (display-mode:standalone){
+    nav{padding-left:max(clamp(20px,5vw,40px),env(safe-area-inset-left));padding-right:max(clamp(20px,5vw,40px),env(safe-area-inset-right))}
+    footer{padding-bottom:calc(env(safe-area-inset-bottom) + 40px)}
+  }
 </style>
 </head>
 <body>

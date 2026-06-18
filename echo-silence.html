@@ -2,13 +2,19 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <script>(function(){try{var t=localStorage.getItem("echoed-theme")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
 <title>不必什么都回应 · echoed</title>
 <meta name="description" content="在一个鼓励人对一切都即时表态的环境里，懂得「不回应」，反而成了稀缺的力量。沉默不是缺席，挑选要不要发声本身就是一种表达。">
 <meta name="theme-color" content="#F6F2E8">
 <link rel="canonical" href="https://echoed.uk/echo-silence.html">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="echoed">
 <link rel="alternate" type="application/rss+xml" title="echoed RSS" href="rss.xml">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="echoed.uk">
@@ -96,6 +102,11 @@
   .flinks a:hover{color:var(--ink)}
   .copy{font-family:system-ui,sans-serif;font-size:12px;color:var(--faint);letter-spacing:.04em;width:100%;margin-top:8px}
   @media (max-width:560px){.fbottom{flex-direction:column;align-items:flex-start}}
+
+  @media (display-mode:standalone){
+    nav{padding-left:max(clamp(20px,5vw,40px),env(safe-area-inset-left));padding-right:max(clamp(20px,5vw,40px),env(safe-area-inset-right))}
+    footer{padding-bottom:calc(env(safe-area-inset-bottom) + 40px)}
+  }
 </style>
 </head>
 <body>
