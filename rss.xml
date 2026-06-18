@@ -6,7 +6,34 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 01 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 Aug 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>我喜欢那些在开口之前要想一下的人</title>
+      <link>https://echoed.uk/echo-pause.html</link>
+      <guid>https://echoed.uk/echo-pause.html</guid>
+      <category>观点</category>
+      <pubDate>Fri, 15 Aug 2026 00:00:00 +0000</pubDate>
+      <description>在一个鼓励快速反应的世界里，「先想一想」是一种越来越少见的尊重。那个停顿，比答案本身更诚实。</description>
+    </item>
+
+    <item>
+      <title>读完一本书的那个夜晚</title>
+      <link>https://echoed.uk/echo-finishing.html</link>
+      <guid>https://echoed.uk/echo-finishing.html</guid>
+      <category>观点</category>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 +0000</pubDate>
+      <description>读完一本真正好的书，你会有几个小时找不到自己该去哪里。那种迷失，是书还活着的证明。</description>
+    </item>
+
+    <item>
+      <title>跑步，以及其他没有观众的事</title>
+      <link>https://echoed.uk/echo-running.html</link>
+      <guid>https://echoed.uk/echo-running.html</guid>
+      <category>书</category>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
+      <description>村上春树的跑步书，说的不只是跑步。才能会触到天花板，「每天去做」不会。</description>
+    </item>
 
     <item>
       <title>我们误把「更多信息」当成了「更懂」</title>
