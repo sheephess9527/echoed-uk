@@ -6,7 +6,34 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 18 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jun 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>那些没有告别就走散的人</title>
+      <link>https://echoed.uk/echo-drifting.html</link>
+      <guid>https://echoed.uk/echo-drifting.html</guid>
+      <category>文章</category>
+      <pubDate>Fri, 19 Jun 2026 00:00:00 +0000</pubDate>
+      <description>大多数友谊不是断掉的，是淡掉的。没有吵架，没有理由，只是消息越隔越久，最后就没有了。这是一种没有葬礼的失去。</description>
+    </item>
+
+    <item>
+      <title>第二次读到的，是另一本书</title>
+      <link>https://echoed.uk/echo-rereading.html</link>
+      <guid>https://echoed.uk/echo-rereading.html</guid>
+      <category>观点</category>
+      <pubDate>Fri, 19 Jun 2026 00:00:00 +0000</pubDate>
+      <description>我们已经知道结局，却还是会重读一本旧书。因为书没变，变的是你——重读，是用一个不变的东西，丈量一个在变的自己。</description>
+    </item>
+
+    <item>
+      <title>舍不得用的那些东西</title>
+      <link>https://echoed.uk/echo-saving.html</link>
+      <guid>https://echoed.uk/echo-saving.html</guid>
+      <category>观点</category>
+      <pubDate>Fri, 19 Jun 2026 00:00:00 +0000</pubDate>
+      <description>把好东西留到「以后」，其实是悄悄认定：今天还不够好。可那个值得的时刻，往往不会来——因为我们一直在往后挪那条线。</description>
+    </item>
 
     <item>
       <title>我喜欢那些在开口之前要想一下的人</title>
