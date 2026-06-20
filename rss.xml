@@ -6,7 +6,34 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 19 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>那个不想玩了的人，古今都有</title>
+      <link>https://echoed.uk/echo-tangping.html</link>
+      <guid>https://echoed.uk/echo-tangping.html</guid>
+      <category>文章</category>
+      <pubDate>Sat, 20 Jun 2026 00:00:00 +0000</pubDate>
+      <description>陶渊明说「不为五斗米折腰」，辞官去种地。今天有人说「躺平」。一千六百年过去了，那个疲倦是同一种疲倦。退出，不是逃跑——是他对那套系统要求的代价，和它能给出的回报，做了一次诚实的核算。</description>
+    </item>
+
+    <item>
+      <title>古人的「已读不回」</title>
+      <link>https://echoed.uk/echo-letter.html</link>
+      <guid>https://echoed.uk/echo-letter.html</guid>
+      <category>文章</category>
+      <pubDate>Sat, 20 Jun 2026 00:00:00 +0000</pubDate>
+      <description>杜甫写信给李白，寄出去，然后等——几个月，没有回音。消息送出去之后的那段沉默，和你盯着蓝色双勾等回复，是同一种等待。古人没有「已读」的显示，但那个揣测的心情，一样的。</description>
+    </item>
+
+    <item>
+      <title>辗转反侧，三千年前的人也睡不着</title>
+      <link>https://echoed.uk/echo-sleepless.html</link>
+      <guid>https://echoed.uk/echo-sleepless.html</guid>
+      <category>文章</category>
+      <pubDate>Sat, 20 Jun 2026 00:00:00 +0000</pubDate>
+      <description>「辗转反侧」出自《诗经·关雎》，距今约三千年。那个人因为想一个人睡不着，把这件事写了下来——三千年后这四个字还活着，因为每一个读到它的人都说：对，就是这样。</description>
+    </item>
 
     <item>
       <title>教我爸用手机的那个下午</title>
