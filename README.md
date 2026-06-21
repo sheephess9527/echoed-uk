@@ -5,16 +5,85 @@
 一个静态个人网站，把读到、听到、想过之后值得留下的东西，作为「回响」分享出来。
 核心价值：**共鸣 > 噪音 · 深度 > 广度 · 持久 > 短暂**。
 
-## 页面
+## 主要页面
 
 | 文件 | 页面 | 说明 |
 | --- | --- | --- |
-| `index.html` | 首页 | 回声 Hero（可点击产生波纹）+ 宣言 + 精选回响 + 订阅 |
-| `explore.html` | 探索回响 | 可按类型筛选的策展精选列表 |
+| `index.html` | 首页 | 回声 Hero（canvas 波纹，可点击）+ 宣言 + 精选回响 + 订阅页脚 |
+| `explore.html` | 探索回响 | 可按类型（文章 / 观点 / 对话 / 书）筛选的策展精选时间线 |
 | `about.html` | 关于 | 品牌故事 |
-| `echo-signal.html` | 回响详情 | 单篇完整阅读页（含阅读进度条），范例长文 |
+| `echo-*.html` | 回响详情 | 每篇文章独立成页（含阅读进度条），见下方内容清单 |
 
-纯静态，无构建步骤，无依赖。字体经 Google Fonts 引入（思源宋体 + Fraunces）。
+纯静态，无构建步骤、无依赖、无框架。每个页面自包含（内联 CSS + 原生 JS），可单独用浏览器打开。字体经 Google Fonts 引入：思源宋体 Noto Serif SC（中文）+ Fraunces（拉丁字标）。
+
+## 内容清单
+
+截至目前共 32 篇回响。按发布日期由新到旧排列，类型分为「文章 / 观点 / 对话 / 书」。
+
+### 通晓古今系列
+
+用一个古典的细节照进今天，又用今天的感受回溯到很久以前。
+
+| 文件 | 标题 | 古典 × 当下 | 日期 |
+| --- | --- | --- | --- |
+| `echo-homecoming.html` | 越靠近，越不敢 | 宋之问「近乡情更怯」× 不敢点开的消息 | 06·21 |
+| `echo-house.html` | 自己的房子破了，他想的却是别人 | 杜甫《茅屋为秋风所破歌》× 居住焦虑 | 06·21 |
+| `echo-melancholy.html` | 古人也「emo」，只是他们给它起了名字 | 李清照、辛弃疾的「愁」× 情绪命名 | 06·21 |
+| `echo-sleepless.html` | 辗转反侧，三千年前的人也睡不着 | 《诗经·关雎》× 凌晨失眠 | 06·20 |
+| `echo-letter.html` | 古人的「已读不回」 | 杜甫寄信等李白 × 蓝色双勾 | 06·20 |
+| `echo-tangping.html` | 那个不想玩了的人，古今都有 | 陶渊明「不为五斗米折腰」× 躺平 | 06·20 |
+
+### 其余回响
+
+| 文件 | 标题 | 类型 | 日期 |
+| --- | --- | --- | --- |
+| `echo-parents.html` | 教我爸用手机的那个下午 | 文章 | 06·19 |
+| `echo-seasons.html` | 古人把一年，过成了七十二种样子 | 文章 | 06·19 |
+| `echo-taste.html` | 有一种味道，你再也尝不到了 | 观点 | 06·19 |
+| `echo-stranger.html` | 和陌生人说过的那些话 | 文章 | 06·19 |
+| `echo-boredom.html` | 我已经很久没有真正无聊过了 | 观点 | 06·19 |
+| `echo-photograph.html` | 拍照的那一刻，你其实已经不在了 | 观点 | 06·19 |
+| `echo-lasttime.html` | 最后一次，我们往往不知道那是最后一次 | 文章 | 06·19 |
+| `echo-readlater.html` | 那些被收藏，却再没打开的 | 观点 | 06·19 |
+| `echo-bookshop.html` | 一位旧书店老板：我卖的不是书，是别人的时间 | 对话 | 06·19 |
+| `echo-midnight.html` | 我们为什么在深夜更诚实 | 观点 | 06·19 |
+| `echo-wang.html` | 读汪曾祺：把寻常日子过出滋味 | 书 | 06·19 |
+| `echo-ruins.html` | 那个朝代覆灭的时候，普通人在想什么 | 文章 | 06·19 |
+| `echo-hometown.html` | 回村以后，有些词的意思变了 | 观点 | 06·19 |
+| `echo-northwest.html` | 在西北，我忽然不在意了一些事 | 文章 | 06·19 |
+| `echo-drifting.html` | 那些没有告别就走散的人 | 文章 | 06·19 |
+| `echo-rereading.html` | 第二次读到的，是另一本书 | 观点 | 06·19 |
+| `echo-saving.html` | 舍不得用的那些东西 | 观点 | 06·19 |
+| `echo-pause.html` | 我喜欢那些在开口之前要想一下的人 | 观点 | 06·18 |
+| `echo-finishing.html` | 读完一本书的那个夜晚 | 观点 | 06·18 |
+| `echo-running.html` | 跑步，以及其他没有观众的事 | 书 | 06·18 |
+| `echo-signal.html` | 如何在噪音里，认出属于你的那个信号 | 文章 | 06·16 |
+| `echo-information.html` | 我们误把「更多信息」当成了「更懂」 | 观点 | 06·16 |
+| `echo-slow.html` | 慢，是一种被低估的能力 | 文章 | 06·16 |
+| `echo-craftsman.html` | 一位装帧师聊「为什么要做得这么慢」 | 对话 | 06·16 |
+| `echo-deep-work.html` | 《深度工作》— Cal Newport | 书 | 06·16 |
+| `echo-silence.html` | 不必什么都回应 | 观点 | 06·16 |
+
+新增文章时，记得同步更新 `explore.html`（时间线卡片）、`sitemap.xml`、`rss.xml`，并在详情页底部设置交叉互链。
+
+## 功能特性
+
+- **日间 / 夜间主题切换**：导航栏右侧按钮切换，偏好存入 `localStorage`，并同步 `theme-color`；首屏内联脚本提前应用主题，避免闪烁。
+- **PWA / iOS 主屏支持**：`site.webmanifest` + apple-touch-icon + 各机型启动画面（`assets/splash-*.png`），消除冷启动白屏；独立模式下导航栏显示刷新按钮。
+- **阅读体验**：详情页顶部阅读进度条；正文中「原文/来源」用安静的灰色，「我的点评（回响）」用带暖色左缘的样式强调——这是品牌隐喻。
+- **可发现性**：`rss.xml`（订阅源）与 `sitemap.xml`（站点地图）。
+- **无障碍与适配**：响应式到手机、键盘焦点、`prefers-reduced-motion`。
+
+## 设计约定
+
+配色 token 定义在每页 `:root`，并提供 `html[data-theme="dark"]` 覆盖：
+
+| 角色 | 日间 | 夜间 |
+| --- | --- | --- |
+| 背景 | `#F6F2E8` | `#07090F` |
+| 墨色文字 | `#23262E` | `#EDE9E0` |
+| 信号暖琥珀（唯一强调色，克制使用） | `#B27517` | `#F0B35E` |
+| 次要文字 | `#6A7079` | `#7C8694` |
 
 ## 本地预览
 
@@ -27,20 +96,20 @@ python3 -m http.server 8000
 
 ## 部署
 
-任意静态托管都可以。推荐 Cloudflare Pages 或 GitHub Pages：
+任意静态托管都可以。当前通过 **GitHub Pages 从 `master` 分支根目录** 发布——推送到 `master` 后会自动重新构建，约 1～2 分钟后生效。
 
-- **GitHub Pages**：仓库 Settings → Pages → Source 选 `main` 分支根目录 → 保存。
+- **GitHub Pages**：仓库 Settings → Pages → Source 选 `master` 分支根目录 → 保存。
 - **Cloudflare Pages**：连接此仓库，构建命令留空，输出目录填 `/`。
 
-绑定自定义域名 `echoed.uk` 后，把 DNS 指向托管商即可。
+绑定自定义域名 `echoed.uk` 后，把 DNS 指向托管商即可。`push.sh` 为一键推送脚本。
 
 ## 待办（内容侧）
 
 - [ ] 把样例点评替换为真实内容
 - [ ] 订阅框接入邮件服务（Buttondown / Substack / ConvertKit）
-- [ ] 补充 `rss.xml` 与 `sitemap.xml`
-- [ ] 替换社交/邮箱链接
+- [x] 补充 `rss.xml` 与 `sitemap.xml`
+- [ ] 替换页脚的社交 / 邮箱链接
 
 ---
 
-© 2026 echoed.uk
+© 2026 echoed.uk · 在噪音中，寻找信号
