@@ -6,7 +6,34 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 20 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jun 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>古人也「emo」，只是他们给它起了名字</title>
+      <link>https://echoed.uk/echo-melancholy.html</link>
+      <guid>https://echoed.uk/echo-melancholy.html</guid>
+      <category>文章</category>
+      <pubDate>Sun, 21 Jun 2026 00:00:00 +0000</pubDate>
+      <description>我们用一个「emo」打包所有说不清的低落；古人正相反——李清照把愁拆成「寻寻觅觅，冷冷清清，凄凄惨惨戚戚」，还嫌一个「愁」字装不下。给情绪一个准确的名字，它就从一团雾，变成你能站在旁边看着的东西。</description>
+    </item>
+
+    <item>
+      <title>自己的房子破了，他想的却是别人</title>
+      <link>https://echoed.uk/echo-house.html</link>
+      <guid>https://echoed.uk/echo-house.html</guid>
+      <category>文章</category>
+      <pubDate>Sun, 21 Jun 2026 00:00:00 +0000</pubDate>
+      <description>秋风掀了杜甫草堂的屋顶，雨漏进来，被子冷得像铁。换了我们多半在想「什么时候能有自己的家」，杜甫却写下「安得广厦千万间，大庇天下寒士俱欢颜」。他在最冷的那一夜没有缩小，反而把目光抬起来，望向了天下所有在风雨里的人。</description>
+    </item>
+
+    <item>
+      <title>越靠近，越不敢</title>
+      <link>https://echoed.uk/echo-homecoming.html</link>
+      <guid>https://echoed.uk/echo-homecoming.html</guid>
+      <category>文章</category>
+      <pubDate>Sun, 21 Jun 2026 00:00:00 +0000</pubDate>
+      <description>宋之问断了一年音讯逃回家乡，却「近乡情更怯，不敢问来人」。他怕的不是「不知道」，是「知道」。今天那条迟迟不敢点开的消息、那份不敢看的报告，都是同一种怯——而怯，恰恰是因为太在乎。</description>
+    </item>
 
     <item>
       <title>那个不想玩了的人，古今都有</title>
