@@ -6,7 +6,34 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 21 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 22 Jun 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>我们留给后人的，是几万张再没打开过的照片</title>
+      <link>https://echoed.uk/echo-legacy.html</link>
+      <guid>https://echoed.uk/echo-legacy.html</guid>
+      <category>文章</category>
+      <pubDate>Mon, 22 Jun 2026 00:00:00 +0000</pubDate>
+      <description>古人留竹简、家书、墓志铭，记录的成本高，于是"记录"本身就是一次筛选。我们让记录变得几乎免费，也顺手让它没了重量。留得多，和留得久，从来不是一回事——竹简埋两千年还能读，我们二十年前的某些格式却已经打不开了。</description>
+    </item>
+
+    <item>
+      <title>一件用旧的东西，为什么换了新的反而空落落</title>
+      <link>https://echoed.uk/echo-worn.html</link>
+      <guid>https://echoed.uk/echo-worn.html</guid>
+      <category>观点</category>
+      <pubDate>Mon, 22 Jun 2026 00:00:00 +0000</pubDate>
+      <description>旧的明明该换了，换上新的那天，心里却空了一块。一件东西用得够久，会把你过日子的方式一点点记在身上——"被使用"于是悄悄变成了"陪伴"。在一个催你不断换新的时代，舍不得扔的旧物，是一种安静的抵抗：有些价值不是越新越好，是越久越深。</description>
+    </item>
+
+    <item>
+      <title>有些话，写下来才算数</title>
+      <link>https://echoed.uk/echo-handwriting.html</link>
+      <guid>https://echoed.uk/echo-handwriting.html</guid>
+      <category>观点</category>
+      <pubDate>Mon, 22 Jun 2026 00:00:00 +0000</pubDate>
+      <description>同一句"谢谢你"，发条消息和写在纸上，重量完全不同。越容易留下的，我们越不当真；越难抹去的，写下时越慎重。有些话，值得用那个慢的、改不掉的、留得久的方式说一次——那个动作本身，就在告诉对方：这句话我是认真的，我愿意让它留下来。</description>
+    </item>
 
     <item>
       <title>你脚下这条路，比所有人都活得久</title>
