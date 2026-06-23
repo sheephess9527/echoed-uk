@@ -6,7 +6,34 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 22 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jun 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>手比脑子记得更久</title>
+      <link>https://echoed.uk/echo-hands.html</link>
+      <guid>https://echoed.uk/echo-hands.html</guid>
+      <category>文章</category>
+      <pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate>
+      <description>背过的课文会忘，可多年没碰的自行车，一跨上去身体就会了。脑子记的是"知道"，身体记的是"会"——知道会褪色，会，刻得更深。那些认不出家人的老人，手却还会做一辈子的那道菜，身体常常是最后一个忘记的。</description>
+    </item>
+
+    <item>
+      <title>走着走着，就想通了</title>
+      <link>https://echoed.uk/echo-walking.html</link>
+      <guid>https://echoed.uk/echo-walking.html</guid>
+      <category>观点</category>
+      <pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate>
+      <description>一个问题坐着想破头都没用，出门走一圈回来，答案自己浮上来了。卢梭、尼采、康德都靠走路思考。有些答案不是想出来的，是走出来的——它们怕被紧紧盯着，你一移开目光、迈开脚步，它才肯露面。</description>
+    </item>
+
+    <item>
+      <title>身体总是先知道</title>
+      <link>https://echoed.uk/echo-gut.html</link>
+      <guid>https://echoed.uk/echo-gut.html</guid>
+      <category>观点</category>
+      <pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate>
+      <description>走进一个房间，还没看清就觉得"不对"；见某个人，明明在笑你却想离开。在理智说话之前，身体先开了口——它整合了一堆你没意识到的线索，抢在意识前面给出反应。当身体和脑子打架，别急着用道理把它压下去，那里藏着你还没算进去的信息。</description>
+    </item>
 
     <item>
       <title>我们留给后人的，是几万张再没打开过的照片</title>
