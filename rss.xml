@@ -6,7 +6,34 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 23 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jun 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>晒过太阳的被子，有一种味道</title>
+      <link>https://echoed.uk/echo-sunlight.html</link>
+      <guid>https://echoed.uk/echo-sunlight.html</guid>
+      <category>观点</category>
+      <pubDate>Wed, 24 Jun 2026 00:00:00 +0000</pubDate>
+      <description>把脸埋进晒了一下午的被子，那股"太阳的味道"就出来了。它急不得——你没法用机器五分钟给一床被子注入"晒过太阳"。晒被子，某种程度上也是晒自己：把一段有点闷、有点潮的日子摊开来，晾一晾，让光进来。</description>
+    </item>
+
+    <item>
+      <title>下雨天，好像被允许慢下来</title>
+      <link>https://echoed.uk/echo-rain.html</link>
+      <guid>https://echoed.uk/echo-rain.html</guid>
+      <category>观点</category>
+      <pubDate>Wed, 24 Jun 2026 00:00:00 +0000</pubDate>
+      <description>拉开窗帘在下雨，你有点扫兴，却又莫名松了口气。晴天总像在催你把它用好，雨天却像轻轻按住你的肩膀说：今天，待着也没关系。我们越来越不给自己"待着也没关系"的许可了，而雨天替你把它提前签好了。</description>
+    </item>
+
+    <item>
+      <title>深夜，给自己煮一碗面</title>
+      <link>https://echoed.uk/echo-noodle.html</link>
+      <guid>https://echoed.uk/echo-noodle.html</guid>
+      <category>文章</category>
+      <pubDate>Wed, 24 Jun 2026 00:00:00 +0000</pubDate>
+      <description>深夜饿了，起身烧水、下面、打个蛋，就给自己弄一口热的。我们很容易对别人上心，轮到自己却常常潦草。而深夜认真给自己煮一碗面，是用最小的动作说一句：我也值得被好好喂一口。热汤下肚，那点空落落，被悄悄接住了。</description>
+    </item>
 
     <item>
       <title>手比脑子记得更久</title>
