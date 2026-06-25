@@ -6,7 +6,16 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 24 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jun 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>在杭州，二十年</title>
+      <link>https://echoed.uk/echo-hangzhou.html</link>
+      <guid>https://echoed.uk/echo-hangzhou.html</guid>
+      <category>文章</category>
+      <pubDate>Thu, 25 Jun 2026 00:00:00 +0000</pubDate>
+      <description>2001 年拖着行李箱来杭州读杭电，那时下沙还很空旷；2005 年毕业，很多人去了北上广，我留下了。二十年，城市从西湖时代走到钱塘江时代，我也从一个少年成了家。它什么时候成了我的故乡？没有那一天，是二十年一天一天，悄悄完成的。把异乡过成故乡，靠的不是一腔热血，是每一个留下来的清晨和傍晚。</description>
+    </item>
 
     <item>
       <title>晒过太阳的被子，有一种味道</title>
