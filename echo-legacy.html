@@ -121,6 +121,12 @@
   .refresh-btn{display:none}
   @media (display-mode:standalone){
     .refresh-btn{display:inline-flex}}
+  .share{margin-top:clamp(44px,6vh,64px);padding-top:28px;border-top:1px solid var(--line)}
+  .share-lbl{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--faint);display:block;margin-bottom:16px}
+  .share-btns{display:flex;gap:10px;flex-wrap:wrap}
+  .share-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border:1px solid var(--line);border-radius:4px;background:transparent;color:var(--muted);font-family:system-ui,sans-serif;font-size:13px;cursor:pointer;text-decoration:none;transition:color .3s,border-color .3s,background .3s}
+  .share-btn:hover{color:var(--signal);border-color:var(--signal-line);background:var(--field)}
+  .share-msg{margin-top:14px;font-family:system-ui,sans-serif;font-size:13px;color:var(--signal);min-height:20px}
 </style>
 </head>
 <body>
@@ -220,6 +226,16 @@
       <div class="line">如果今晚翻一翻相册，从那几万张里只能挑十张打印出来，你会挑哪十张？光是想这个问题，可能就已经是一次很好的筛选了。</div>
     </div>
 
+    <div class="share">
+      <span class="share-lbl">分享</span>
+      <div class="share-btns">
+        <button class="share-btn" onclick="shareWechat()" aria-label="分享到微信"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 3C5.36 3 2 5.81 2 9.3c0 1.95 1.05 3.73 2.75 4.9l-.7 2.1 2.4-1.2a8.3 8.3 0 0 0 3.05.58c.27 0 .54-.01.8-.04A4.77 4.77 0 0 1 10 14.1c0-2.76 2.57-5 5.75-5 .35 0 .69.03 1.02.08C16.1 6.08 13.1 3 9.5 3zM7 7.5a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5zm5 0a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5zM15.75 10.5C13.13 10.5 11 12.3 11 14.5c0 2.2 2.13 4 4.75 4 .71 0 1.38-.14 1.98-.38L20 19l-.56-1.68a3.8 3.8 0 0 0 1.31-2.82c0-2.2-2.13-4-4.75-4zm-1.25 2a.625.625 0 1 1 0 1.25.625.625 0 0 1 0-1.25zm2.5 0a.625.625 0 1 1 0 1.25.625.625 0 0 1 0-1.25z"/></svg>微信</button>
+        <button class="share-btn" onclick="shareWeibo()" aria-label="分享到微博"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M10.098 20.323c-3.977.391-7.414-1.406-7.672-4.02-.259-2.609 2.759-5.047 6.74-5.441 3.979-.394 7.413 1.404 7.671 4.018.259 2.613-2.758 5.049-6.739 5.443zM9.05 17.219c-.384.988-1.363 1.475-2.184 1.094-.822-.381-1.135-1.437-.75-2.424.381-.984 1.36-1.47 2.18-1.089.822.381 1.136 1.436.754 2.42zm2.705-.537c-.15.384-.537.578-.861.434-.325-.145-.455-.567-.305-.95.151-.385.537-.578.861-.434.325.144.455.567.305.95zm.029-9.969c-.136-.33-.518-.5-.853-.383a.63.63 0 0 0-.388.816.62.62 0 0 0 .805.375.627.627 0 0 0 .436-.808zm-2.03-1.686c-.39-1.064-1.522-1.58-2.523-1.16-1.001.42-1.493 1.607-1.103 2.672a2.03 2.03 0 0 0 2.525 1.16 1.975 1.975 0 0 0 1.101-2.672zm8.891.981c-.736-2.32-3.2-3.581-5.508-2.784-.531.184-.819.768-.643 1.305.175.536.748.822 1.28.638 1.363-.471 2.866.253 3.343 1.614.478 1.36-.273 2.844-1.637 3.314-.53.184-.818.768-.643 1.305.175.537.748.822 1.28.638 2.307-.8 3.519-3.376 2.528-6.03zm1.936-6.91c-1.87-2.569-5.049-3.844-8.199-3.178a.762.762 0 0 0-.583.906c.111.415.528.666.941.554 2.589-.547 5.212.527 6.75 2.65.714.983.956 2.114.775 3.187a.764.764 0 0 0 .603.881.755.755 0 0 0 .87-.613c.226-1.375-.056-2.844-.957-3.987z"/></svg>微博</button>
+        <button class="share-btn" onclick="copyLink()" aria-label="复制链接"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>复制链接</button>
+      </div>
+      <div class="share-msg" id="shareMsg"></div>
+    </div>
+
     <div class="next">
       <div class="lbl">下一条回响</div>
       <a href="echo-worn.html">
@@ -258,5 +274,8 @@
   });
 </script>
 <script>function toggleTheme(){var d=document.documentElement,n=d.getAttribute("data-theme")==="dark"?"light":"dark";d.setAttribute("data-theme",n);try{localStorage.setItem("echoed-theme",n);}catch(e){}var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",n==="dark"?"#07090F":"#F6F2E8");}</script>
+<script>function shareWechat(){navigator.clipboard.writeText(location.href).then(function(){var m=document.getElementById('shareMsg');m.textContent='链接已复制，请在微信中粘贴分享';setTimeout(function(){m.textContent='';},3000);}).catch(function(){var m=document.getElementById('shareMsg');m.textContent='请手动复制地址栏链接，在微信中粘贴分享';setTimeout(function(){m.textContent='';},4000);});}
+function shareWeibo(){var u=encodeURIComponent(location.href),t=encodeURIComponent(document.title.replace(' · echoed',''));window.open('https://service.weibo.com/share/share.php?url='+u+'&title='+t,'_blank','noopener,noreferrer');}
+function copyLink(){navigator.clipboard.writeText(location.href).then(function(){var m=document.getElementById('shareMsg');m.textContent='链接已复制';setTimeout(function(){m.textContent='';},2500);}).catch(function(){var m=document.getElementById('shareMsg');m.textContent='请手动复制地址栏链接';setTimeout(function(){m.textContent='';},3000);});}</script>
 </body>
 </html>
