@@ -6,7 +6,16 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 25 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jun 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>给糖糖：你不必现在就有答案</title>
+      <link>https://echoed.uk/echo-tangtang.html</link>
+      <guid>https://echoed.uk/echo-tangtang.html</guid>
+      <category>文章</category>
+      <pubDate>Fri, 26 Jun 2026 00:00:00 +0000</pubDate>
+      <description>写给上高一的女儿糖糖。她在桐庐学军中学读书，还说不清自己想成为什么样的人，成绩也忽上忽下。爸爸想告诉她：理想很多时候不是「想」出来的，是做着做着撞上的；一两次考试的分数，量不出你这个人。重要的不是某次的高低，而是掉下去时不慌、不否定自己，再慢慢爬回来。你窗外那条富春江，流到下游就是爸爸上班的钱塘江——你只管往前走，回头总能看见家里那盏灯。慢慢来，爸爸不急。</description>
+    </item>
 
     <item>
       <title>在杭州，二十年</title>
