@@ -6,7 +6,16 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 26 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jun 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>击中你的，往往不是那句漂亮话</title>
+      <link>https://echoed.uk/echo-plainwords.html</link>
+      <guid>https://echoed.uk/echo-plainwords.html</guid>
+      <category>文章</category>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 +0000</pubDate>
+      <description>我手机里存着一个叫「好句子」的备忘录，攒了多年金句，翻开却发现几乎一句都没记住。而真正一直跟着我的那几句——同事拍肩说「又不是只有这一班车」、我妈说「钱不够就回来，家里有饭」——一句都不在本子里。后来明白：漂亮的话是为了被听见，对所有人说，于是没真正对谁说；真正住进心里的话不响亮、甚至有点笨，却是那个具体的人在那一刻专门说给你听的。共鸣跟漂亮关系不大，跟「刚好」关系很大。下次有人随口说一句让你心里轻轻一动的话，别急着划过去——那一动，比一万句金句都金贵。</description>
+    </item>
 
     <item>
       <title>给糖糖：你不必现在就有答案</title>
