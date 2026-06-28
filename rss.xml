@@ -6,7 +6,16 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 28 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jun 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>有机会，我们还是可以喝上一杯的</title>
+      <link>https://echoed.uk/echo-father.html</link>
+      <guid>https://echoed.uk/echo-father.html</guid>
+      <category>文章</category>
+      <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
+      <description>写给我父亲。六年前他摔了一跤，慢性硬膜下血肿之后，就渐渐认不出我们了——眼神常常是空的，喜怒不定，身体一年比一年差。可我记得他脑子清楚时说过：困难再多，都会过去。这句话后来陪我闯过许多难关，没想到有一天要用它面对的最大困难，是他自己。恍惚间我还坐在他的自行车后座上，一眨眼他白发苍苍、性格两样。他是大千世界里一个不起眼的普通男人，背着重担，有点爱喝酒，从前沉默，如今喜怒不定；可他用一辈子的笨办法，盼我知书明礼、独立思考、坚定不移，盼我活得别像他。有机会，我们还是可以喝上一杯的。我相信，真的可以。</description>
+    </item>
 
     <item>
       <title>平静，是成年人能获得的最好的东西</title>
