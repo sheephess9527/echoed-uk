@@ -6,7 +6,16 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 27 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Jun 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>平静，是成年人能获得的最好的东西</title>
+      <link>https://echoed.uk/echo-calm.html</link>
+      <guid>https://echoed.uk/echo-calm.html</guid>
+      <category>观点</category>
+      <pubDate>Sun, 28 Jun 2026 00:00:00 +0000</pubDate>
+      <description>年轻时想要的东西都很响：被看见、厉害、热闹。人到某个岁数才懂，平静才是成年人能得到的最好的东西。平静是一种睁着眼睛的接受——接受这世上大多数的热闹与我无关，接受很多渴望的东西其实得不到，接受自己在许多人眼里无足轻重。成年人的平静，不是因为得到了什么，恰恰是放下了「必须得到」。「我不重要」的另一面是自由：不必为显得重要去讨好、追赶、表演。但它不是麻木，也不是认输——麻木是往下沉，平静是浮上来，把力气从向外抓取收回来，用在向内安顿上。我守得住自己的安静，也驾驭得了自己的欲望；我不重要，但也不需要谁来让我觉得自己重要。</description>
+    </item>
 
     <item>
       <title>往时间指向的方向走</title>
