@@ -16,6 +16,21 @@
 
 纯静态，无构建步骤、无依赖、无框架。每个页面自包含（内联 CSS + 原生 JS），可单独用浏览器打开。字体经 Google Fonts 引入：思源宋体 Noto Serif SC（中文）+ Fraunces（拉丁字标）。
 
+## 🤝 接手须知（换 AI / 换账号 / 新会话，先读这里）
+
+这个站由站主 + AI 协作维护。**任何新的 AI 或新会话接手时，先完整读一遍本 README**——它已包含接手所需的全部信息，不依赖任何聊天记录。
+
+| 关键事实 | 值 |
+| --- | --- |
+| GitHub 仓库 | `sheephess9527/echoed-uk` |
+| 开发分支 | `claude/website-review-o0eglu`（所有改动先提交到这里） |
+| 发布分支 | `master`（GitHub Pages 从 master 根目录发布，约 1～2 分钟生效） |
+| 线上地址 | https://echoed.uk |
+| 沟通语言 | 中文 |
+| 技术栈 | 纯静态 HTML；每页内联 CSS + 原生 JS；无构建、无依赖、无框架 |
+
+**接手后的标准动作**：① 读《协作约定》了解规则与底线；② 要发新文章，照《新增一篇文章的完整流程（Runbook）》逐步做；③ 涉及站主本人或家人的内容，一律以《作者事实档》为准，不得与既有文章冲突；④ 任何改动完成后，更新《变更记录》并按《提交与上线命令》推送上线。⑤ 改全站性的东西（如分享逻辑）前，先读《技术实现备忘》——每页自包含，跨文章的改动要批量处理。
+
 ## 内容清单
 
 截至目前共 49 篇回响。按发布日期由新到旧排列，类型分为「文章 / 观点 / 对话 / 书」。
@@ -184,6 +199,68 @@ python3 -m http.server 8000
 6. **个人记述要前后一致**：凡涉及站主本人或家人的私人事实，以下方「作者事实档」为准，不得与既有文章冲突。
 7. **每一次变动都写进 README**：每次改动后，更新下方「变更记录」，并同步本节规则（本条即由站主于 06·26 提出）。
 
+## 新增一篇文章的完整流程（Runbook）
+
+照这个顺序做，一步都不要漏：
+
+1. **定文件名**：`echo-<英文 slug>.html`（slug 用一个英文概念词，如 `calm` / `setout` / `father`）。
+2. **复制最新一篇做模板**（保证 head、PWA 启动图、导航、页脚、阅读进度条、主题切换、分享按钮完全一致）：
+   ```bash
+   cp echo-<上一篇>.html echo-<新 slug>.html
+   ```
+   「上一篇」＝《内容清单》里日期最新的那篇（每发一篇就会变）。
+3. **改 `<head>` 里这些字段**（务必全改，漏了 SEO / 分享卡片会串台）：
+   - `<title>……（标题） · echoed</title>`
+   - **描述文案**：在 **4 处**出现且文字完全相同——`<meta name="description">`、`og:description`、`twitter:description`、正文首屏 `<p class="stand">`。**做一次全局替换（旧描述串 → 新描述）即可同时改掉这 4 处。**
+   - `<link rel="canonical">` 与 `og:url` → 改成新文件 URL（`https://echoed.uk/echo-<slug>.html`）。
+   - `og:title`、`twitter:title` → 新标题。
+   - `article:published_time` → `YYYY-MM-DD`。
+4. **改正文区**：
+   - 顶部 meta 行：`<span class="cat">类型</span>·<span>子类</span>·<span>日期</span>·<span>约 N 分钟</span>`（类型＝文章 / 观点 / 对话 / 书）。
+   - `<h1>` 标题。
+   - `<article>` 内：从第一个 `<p>` 到正文最后一段，整段换成新内容；重点句用 `<div class="pull">…</div>`（暖色左缘引语）。
+   - `.endnote` 里的 `.line` → 换成一句留给读者的反问。
+   - `.next`（下一条回响）两个链接 → 指向 2 篇相关文章做交叉互链（理想情况也回到对方页面补一条指回本篇）。
+   - 分享按钮已随模板复制，无需改动。
+   - 改完 grep 一下确认没有残留上一篇的内容（标题、人名、专有名词）。
+5. **同步这些文件**（缺一不可）：
+   - `explore.html`：在 `<div class="feed" id="feed">` 之后**置顶**插一张 `<article class="echo" data-cat="类型">` 卡片（meta 行 + 标题链接 + `.note` 摘要 + `.tags`）。
+   - `sitemap.xml`：在最后一个 `<url>` 后追加本篇 `<loc>`。
+   - `rss.xml`：在第一个 `<item>` 前插入本篇 `<item>`，并把顶部 `<lastBuildDate>` 改成本篇日期。
+   - `README.md`：在《内容清单》对应分类表格置顶加一行；更新「共 N 篇」；在《变更记录》加一条。
+6. **提交 → 合并 → 上线**（见下一节命令）。
+
+## 提交与上线命令（照抄）
+
+```bash
+# 1) 在开发分支提交
+git checkout claude/website-review-o0eglu
+git add <改动的文件...>
+git commit -m "<说明：改了什么>"
+git push -u origin claude/website-review-o0eglu
+
+# 2) 快进合并到 master 并推送（触发 GitHub Pages 重建，约 1～2 分钟生效）
+git checkout master
+git merge --ff-only claude/website-review-o0eglu
+git push origin master
+```
+
+- 推送遇网络错误：按 2s / 4s / 8s / 16s 退避重试，最多 4 次。
+- **不主动建 Pull Request**，除非站主明确要求。
+- `push.sh` 是一键推送脚本，可按需使用。
+
+## 技术实现备忘（动手前先看）
+
+- **每页自包含**：CSS / JS 全部内联在各自的 `echo-*.html` 里，**没有公共 JS/CSS 文件**。好处是单文件能独立打开；代价是「跨所有文章的统一改动」（改分享逻辑、加全站功能等）必须**对每个 `echo-*.html` 批量处理**。历史上用一段遍历 `echo-*.html` 的 Python 脚本做替换（见《变更记录》06·26：加分享按钮、改 Web Share）。
+- **分享按钮**（每页底部 `.share` 区，三个按钮调用页内内联函数）：
+  - `shareWechat()`：优先 `navigator.share()`（手机系统原生分享，可发微信 / 朋友圈）；不支持则走 `wxCopyFallback()` 复制链接 + 提示。
+  - `shareWeibo()`：打开 `service.weibo.com/share/share.php`。
+  - `copyLink()`：复制当前链接。
+  - 局限：静态页无法绕过腾讯直接自动发朋友圈，详见《协作约定》第 4 条。
+- **主题切换**：`<html data-theme="light|dark">` + `localStorage` 键 `echoed-theme`；首屏有内联脚本先行应用主题避免闪烁；切换函数 `toggleTheme()` 同步更新 `theme-color`。
+- **外部依赖**：仅 Google Fonts（思源宋体 + Fraunces）。其余资源在本仓库：`assets/`（`favicon.svg`、`apple-touch-icon.png`、`splash-*.png`、`og-image.png`），`site.webmanifest` 在根目录。
+- **发布日期**：写在 `article:published_time` 和正文 meta 行；当前节奏约每天一篇，显示日期可比真实日期略提前（站主认可）。
+
 ## 作者事实档（个人记述的事实基准）
 
 供第一人称文章保持设定一致，请勿与此冲突：
@@ -200,7 +277,9 @@ python3 -m http.server 8000
 
 按时间倒序，记录每一次改动。
 
-- **2026·06·29** — 新增 `echo-father.html`《有机会，我们还是可以喝上一杯的》（个人记述）——写父亲：六年前摔倒、慢性硬膜下血肿后认不出人、性格阴晴不定；以站主原话为核心（困难都会过去 / 自行车后座 / 盼我活得别像他 / 还能喝上一杯）。落点克制，不许愿痊愈，只守住「哪怕一瞬认出我」的盼头。同步 explore / sitemap / rss / 作者事实档 / 互链（→ 教我爸用手机的那个下午、给糖糖）。
+- **2026·06·29**
+  - 完善 `README.md` 为「可独立接手」的交接文档：新增《接手须知》《新增一篇文章的完整流程（Runbook）》《提交与上线命令》《技术实现备忘》四节，让任何新 AI / 新账号 / 新会话不依赖聊天记录即可马上接手。
+  - 新增 `echo-father.html`《有机会，我们还是可以喝上一杯的》（个人记述）——写父亲：六年前摔倒、慢性硬膜下血肿后认不出人、性格阴晴不定；以站主原话为核心（困难都会过去 / 自行车后座 / 盼我活得别像他 / 还能喝上一杯）。落点克制，不许愿痊愈，只守住「哪怕一瞬认出我」的盼头。同步 explore / sitemap / rss / 作者事实档 / 互链（→ 教我爸用手机的那个下午、给糖糖）。
 - **2026·06·28** — 新增 `echo-calm.html`《平静，是成年人能获得的最好的东西》（观点）——以站主原话为题：平静是一种睁着眼的接受（热闹与我无关、渴望的得不到、自己无足轻重），并特意厘清「平静 ≠ 麻木 / 认输」。同步 explore / sitemap / rss / 互链（→ 不必什么都回应、那个不想玩了的人）。
 - **2026·06·27** — 新增 `echo-setout.html`《往时间指向的方向走》（通晓古今系列）——以站主原话为题：徒步十二公里，用古人隆重的送别仪式（长亭古道、折柳、劝君更尽一杯酒、阳关三叠）反衬一场没有仪式、不回头的重新出发。同步 explore / sitemap / rss / 互链（→ 走着走着就想通了、越靠近越不敢）。（注：引用王维《渭城曲》用通行原句「更尽一杯酒」。）
 - **2026·06·27** — 新增 `echo-plainwords.html`《击中你的，往往不是那句漂亮话》——正面写品牌第一价值「共鸣」：真正记住的不是金句，是某个具体的人在刚好的时刻说的一句朴素真话。同步 explore / sitemap / rss / 互链（→ 陌生人、不必什么都回应）。
