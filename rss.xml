@@ -6,7 +6,16 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 29 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>古人也发朋友圈，只不过发在墙上</title>
+      <link>https://echoed.uk/echo-wall.html</link>
+      <guid>https://echoed.uk/echo-wall.html</guid>
+      <category>文章</category>
+      <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
+      <description>古人出门远行，会把诗题在驿站、寺庙、亭子的墙上；后来的人读到，会唱和、点评，甚至搁笔认输——那是最早的留言板与评论区。相传李白登黄鹤楼想题诗，见崔颢已写在上头，便叹「眼前有景道不得，崔颢题诗在上头」，活脱脱古人版「楼上说得比我好，算了」。题壁还对抗时间：苏轼题西林壁、林升题临安邸，字在墙上一留就是几百年，你读到的可能是百年前一个路过者留下的句子，等于隔着时间与他同框。对照今天：我们留得快、留得多、留得随手，于是留得浅、留得短（一条朋友圈三天就设为不可见）；古人留得慢、留得少、留得费劲，却留得久。留得多和留得久，从来是两回事——能穿过时间的，从不是发得最频的，而是写得最用心的那一句。</description>
+    </item>
 
     <item>
       <title>有机会，我们还是可以喝上一杯的</title>
