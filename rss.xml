@@ -6,7 +6,16 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 30 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jul 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>一天里最好的光，是它快要结束的时候</title>
+      <link>https://echoed.uk/echo-dusk.html</link>
+      <guid>https://echoed.uk/echo-dusk.html</guid>
+      <category>文章</category>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
+      <description>傍晚六点，光忽然变软、变金、变暖，把最普通的墙和旧车都镀上一层好看的边。一天里最美的光，怎么偏偏是它快要结束的时候？我们这个时代崇拜「正午」——最高、最亮、最用力的高光时刻；可正午的光太直太硬，照得人睁不开眼，并不好看。正午的太阳在拼命，黄昏的太阳在松手，而最好看的光，恰恰是松手时漫出来的那一层金。黄昏从不慌张：天慢慢沉下来，地上的灯一盏盏亮起，华灯初上、万家灯火。它在教我一件事——我们太擅长开始、冲刺、争高光，却不太会结束；可好好地结束一件事，和轰轰烈烈地开始，是一样了不起的本事。所以每到傍晚，记得抬头看一眼天，看那轮太阳怎么不慌不忙地，把一天温柔地交出去。</description>
+    </item>
 
     <item>
       <title>古人也发朋友圈，只不过发在墙上</title>
