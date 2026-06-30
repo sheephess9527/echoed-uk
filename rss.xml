@@ -6,7 +6,16 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 01 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jul 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>我们好像，已经受不了安静了</title>
+      <link>https://echoed.uk/echo-quiet.html</link>
+      <guid>https://echoed.uk/echo-quiet.html</guid>
+      <category>观点</category>
+      <pubDate>Thu, 02 Jul 2026 00:00:00 +0000</pubDate>
+      <description>我洗澡都要放着点声音，等电梯就摸手机，走路得塞耳机——顺着这件小事留意，才吃惊地发现：我几乎已经受不了安静了。我们这一代，把生活里所有安静的缝隙（等车、排队、走路、睡前发呆）都用屏幕和声音填满了，再不必面对哪怕一秒钟的「什么都没有」。可我们躲的或许不是安静，而是安静里会浮上来的东西：没做完的事、说错的话、不敢深想的问题、说不清的空落。噪音是一种方便的逃避，让我们一整天都不必和自己单独待着。问题是，被一起挡在门外的还有：好念头（灵感多在发呆、走路时冒出来）、真正的休息、以及你自己的念头与情绪——它们都很轻，只有安静里才听得见。所以试着偶尔把声音关掉：等电梯就只是等电梯，走路就只是走路。一开始会慌，慢慢你会重新听见很久没听见的东西，包括那个被各种声音盖了很久的自己。</description>
+    </item>
 
     <item>
       <title>一天里最好的光，是它快要结束的时候</title>
