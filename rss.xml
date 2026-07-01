@@ -6,7 +6,16 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 02 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>那块墓地，是时间在看着我们</title>
+      <link>https://echoed.uk/echo-qingming.html</link>
+      <guid>https://echoed.uk/echo-qingming.html</guid>
+      <category>文章</category>
+      <pubDate>Fri, 03 Jul 2026 00:00:00 +0000</pubDate>
+      <description>翻旧手机，看到八年前——2018 年清明——自己写下的一段话。那年父母去看了一块墓地，我写道：好像时间很长、相聚很长，可从读大学起就与父母聚少离多，每次见面都是一次改变（白发增多、手开始发抖、从中气十足训我到角落沉默、从不肯吃药到胰岛素不离手），那块墓地告诉我「我们的时间不多了」。八年后，这句话以更狠的方式成了真：写下它两年后父亲摔倒、慢性硬膜下血肿，如今认不出我们——最狠的告别，不是一个人走了，而是他还在、却再也认不出你。同一段时间，一头带走父亲，另一头把当年襁褓照片里的糖小姐养到高一住校。当年结尾我写「我尊重那块墓地，但它在那里，是时间在看着我们，如此我们什么勇气都有了」，如今才真正读懂：趁还来得及，把有益、有趣、有爱、有品的事一件件去做，此刻还在身边的人，就好好爱着。</description>
+    </item>
 
     <item>
       <title>我们好像，已经受不了安静了</title>
