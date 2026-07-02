@@ -6,7 +6,16 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 03 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>刚醒的那几分钟，是一天里唯一属于你自己的</title>
+      <link>https://echoed.uk/echo-dawn.html</link>
+      <guid>https://echoed.uk/echo-dawn.html</guid>
+      <category>文章</category>
+      <pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate>
+      <description>有天醒得比闹钟早几分钟，没有立刻摸手机，就那么躺着——然后意识到，这大概是一天里唯一没人跟自己要东西的时候。屏幕一亮，一切就开始了：未读消息在等你回，工作群在等你确认，你立刻从「你自己」变成「大家都需要的那个人」。而刚醒的那几分钟，没人知道你醒了，没人在等你，你不欠任何人一个回复。白天的你是很多人的谁——同事、子女、父母、该发言的人；可刚醒的那几分钟，你还没成为任何人的谁，只是躺在那儿的自己。大多数人（包括作者）常常舍不得留住这几分钟，闹钟一响就摸手机，仿佛只有立刻接入那个「大家都要你」的世界，这一天才算正式开始；可你越早点亮手机，就越早把自己重新交出去。所以现在会尽量多躺一会儿，不为了做什么了不起的事，只是在正式变成「谁的谁」之前，先安安静静地做一会儿自己——世界会等你，但那几分钟的安静，不等人。</description>
+    </item>
 
     <item>
       <title>那块墓地，是时间在看着我们</title>
