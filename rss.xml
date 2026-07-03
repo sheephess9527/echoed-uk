@@ -6,7 +6,16 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 04 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>慌的时候，先把呼吸放慢</title>
+      <link>https://echoed.uk/echo-breath.html</link>
+      <guid>https://echoed.uk/echo-breath.html</guid>
+      <category>文章</category>
+      <pubDate>Sun, 05 Jul 2026 00:00:00 +0000</pubDate>
+      <description>这些年帮我扛过最多难关的，不是什么大道理，是好好呼吸。人一紧张、害怕、生气，最先变的往往是呼吸——它不知不觉变浅、变快，或干脆屏住；常常等你反应过来「我怎么了」，身体早用那口发紧的气先告诉你了。呼吸是很诚实的，脸上能强撑镇定，那口气却藏不住。但它最神奇处在于：身体里大部分事都不归你管——你没法命令心跳慢下来、没法让肾上腺素别飙、没法叫胃里那阵翻搅停住；可呼吸不一样，它是唯一一件既自动进行、又能被你随时接管的事，是「不由你」的身体和「由你」的意志之间唯一一扇两边都推得开的门。古人早懂：打坐讲调息，练功讲气沉丹田，「气定神闲」落到最实处，就是先把那口气稳住。所以慌的时候，别急着想通、也别骗自己冷静点，就停一下，把气慢慢深深吸进去、再慢慢吐出来，几次就好。你不必等「想开了」才平静——很多时候顺序是反的：先让呼吸慢下来，身体稳住了，那颗慌乱的心才肯坐下来好好跟你说话。</description>
+    </item>
 
     <item>
       <title>一位守灯塔的人：光，是为看不见的人亮的</title>
