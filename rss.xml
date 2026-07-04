@@ -6,7 +6,16 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 05 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jul 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>有一种朋友，很久不联系，也不会散</title>
+      <link>https://echoed.uk/echo-oldfriend.html</link>
+      <guid>https://echoed.uk/echo-oldfriend.html</guid>
+      <category>观点</category>
+      <pubDate>Mon, 06 Jul 2026 00:00:00 +0000</pubDate>
+      <description>一个多年没怎么联系的老朋友忽然来电，几句话就化掉那点生疏，回到当年的频道，仿佛中间隔着的几年不存在。我们这个时代特别看重「联系」，微信几千好友、天天点赞，不知不觉把「联系得勤」当成了「关系好」的证据；可那些点赞之交经不起考验，断上十天半月就客气生分，得靠不停维护才不冷掉。但总有几个人恰恰相反：一年说不上几句话、隔着几座城，一通电话就立马接上，该损还损、该掏心还掏心。这种关系不用维护——你什么时候回头，他都在。它之所以结实，不是因为联系得多，而是因为你们有过一段一起真真切切走过的时光：一起熬的夜、犯的傻、只有彼此懂的默契，早沉到底下焊死了，不必天天擦拭，也不会生锈。真正深的东西，都经得起长时间不打理；反倒是那些要天天维护才不掉的关系，本身就说明没那么深。所以别拿「多久没联系」衡量一段感情——有些天天聊的其实很浅，有些沉默多年的一直很深。朋友不在多，能有两三个断了很久、一见如故、你笃定他一直在那儿的人，这辈子就已经很富有了。</description>
+    </item>
 
     <item>
       <title>慌的时候，先把呼吸放慢</title>
