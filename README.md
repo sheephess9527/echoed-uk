@@ -233,10 +233,17 @@ python3 -m http.server 8000
    - 改完 grep 一下确认没有残留上一篇的内容（标题、人名、专有名词）。
 5. **同步这些文件**（缺一不可）：
    - `explore.html`：在 `<div class="feed" id="feed">` 之后**置顶**插一张 `<article class="echo" data-cat="类型">` 卡片（meta 行 + 标题链接 + `.note` 摘要 + `.tags`）。
-   - `sitemap.xml`：在最后一个 `<url>` 后追加本篇 `<loc>`。
    - `rss.xml`：在第一个 `<item>` 前插入本篇 `<item>`，并把顶部 `<lastBuildDate>` 改成本篇日期。
+   - `index.html`：如果这篇够分量，考虑替换首页《精选回响》里的一张 `.fitem`（首页精选是**手工维护、不会自动更新**的——别让它再变旧）。
    - `README.md`：在《内容清单》对应分类表格置顶加一行；更新「共 N 篇」；在《变更记录》加一条。
-6. **提交 → 合并 → 上线**（见下一节命令）。
+6. **跑三个维护脚本**（生成本篇 OG 图、写好 og:image + JSON-LD、刷新 sitemap 的 lastmod；见《技术实现备忘》）：
+   ```bash
+   python3 tools/gen_og.py       # 生成 assets/og/echo-<slug>.png（需 Pillow + 中文字体）
+   python3 tools/gen_meta.py     # 为每篇写 og:image / twitter:image + Article JSON-LD（幂等）
+   python3 tools/gen_sitemap.py  # 重新生成 sitemap.xml（含每条 <lastmod>）
+   ```
+   三个脚本都幂等、可反复跑。**新建文章从模板复制而来，og:image/JSON-LD 会指向源文章，务必跑一遍 `gen_meta.py` 纠正**；`gen_og.py` 会给新 slug 补上专属分享图。
+7. **提交 → 合并 → 上线**（见下一节命令）。
 
 ## 提交与上线命令（照抄）
 
@@ -266,8 +273,11 @@ git push origin master
   - `copyLink()`：复制当前链接。
   - 局限：静态页无法绕过腾讯直接自动发朋友圈，详见《协作约定》第 4 条。
 - **主题切换**：`<html data-theme="light|dark">` + `localStorage` 键 `echoed-theme`；首屏有内联脚本先行应用主题避免闪烁；切换函数 `toggleTheme()` 同步更新 `theme-color`。
-- **外部依赖**：仅 Google Fonts（思源宋体 + Fraunces）。其余资源在本仓库：`assets/`（`favicon.svg`、`apple-touch-icon.png`、`splash-*.png`、`og-image.png`），`site.webmanifest` 在根目录。
-- **发布日期**：写在 `article:published_time` 和正文 meta 行；当前节奏约每天一篇，显示日期可比真实日期略提前（站主认可）。
+- **外部依赖**：仅 Google Fonts（思源宋体 + Fraunces）。其余资源在本仓库：`assets/`（`favicon.svg`、`apple-touch-icon.png`、`splash-*.png`、`og-image.png`、以及每篇专属的 `assets/og/echo-<slug>.png`），`site.webmanifest` 在根目录。
+- **每篇专属分享图（OG）**：`assets/og/echo-<slug>.png`（1200×630，米色底 + 标题 + `echoed.` 字标 + 回声弧线），由 `tools/gen_og.py` 用 Pillow + 中文字体（WenQuanYi Zen Hei）本地生成，无需联网/构建。各页 `og:image` 与 `twitter:image` 指向本篇专属图。**若环境没有 Pillow 或中文字体，`gen_og.py` 跑不了——此时把新文章的 `og:image`/`twitter:image` 手动改回通用的 `assets/og-image.png`，以免分享卡片裂图。**
+- **结构化数据**：每篇 `<head>` 末尾有一段 `Article` JSON-LD（标题/描述/发布时间/作者/图片/URL），由 `tools/gen_meta.py` 生成，利于搜索收录与富摘要。
+- **维护脚本（`tools/`，authoring aid，非站点构建步骤）**：`gen_og.py`（OG 图）、`gen_meta.py`（og:image + JSON-LD，幂等）、`gen_sitemap.py`（重生成 `sitemap.xml` 含 `<lastmod>`）。站点本身仍是**直接托管的纯静态 HTML**，这些脚本只是写文章时的辅助，跑不跑都不影响已生成的页面。
+- **发布日期**：写在 `article:published_time` 和正文 meta 行；`sitemap.xml` 的 `<lastmod>` 由 `gen_sitemap.py` 按此填。当前节奏约每天一篇，显示日期可比真实日期略提前（站主认可）。
 
 ## 作者事实档（个人记述的事实基准）
 
@@ -282,6 +292,12 @@ git push origin master
 
 按时间倒序，记录每一次改动。
 
+- **2026·07·06（站点优化批次）** — 应站主要求做的一轮优化：
+  - **首页精选刷新**：`index.html`《精选回响》从 06·19 的旧三篇，换成 4 篇有代表性的近作（在杭州二十年 / 那块墓地 / 守灯塔的人 / 平静）；并把「更新首页精选」写进 Runbook（首页精选手工维护、不会自动更新）。
+  - **每篇专属 OG 分享图**：新增 `tools/gen_og.py`，用 Pillow 本地生成 57 张 `assets/og/echo-<slug>.png`（米色底 + 标题 + 字标 + 回声弧线）；各页 `og:image`/`twitter:image` 改为指向本篇专属图（此前 50+ 篇共用一张，分享出去长得一样）。
+  - **结构化数据**：为全部 57 篇注入 `Article` JSON-LD（`tools/gen_meta.py`，幂等）。
+  - **sitemap `<lastmod>`**：`tools/gen_sitemap.py` 重生成 `sitemap.xml`，每条 URL 带 `lastmod`。
+  - 三个维护脚本已并入 `tools/` 与 Runbook 第 6 步。
 - **2026·07·06** — 新增 `echo-oldfriend.html`《有一种朋友，很久不联系，也不会散》（观点）——写「不怕断」的深交：我们错把「常联系」当「关系好」，可最深的情谊靠的是当年一起走过的时光，经得起长时间不打理。是《那些没有告别就走散的人》的温暖反面。同步 explore / sitemap / rss / 互链（→ 走散的人、和陌生人说过的那些话）。
 - **2026·07·05** — 新增 `echo-breath.html`《慌的时候，先把呼吸放慢》（身体知道系列第 4 篇）——呼吸是唯一「既自动、又能被你随时接管」的身体功能，是「不由你」与「由你」之间那扇两边都推得开的门；慌时先放慢呼吸，身体稳了心才肯坐下。同步 explore / sitemap / rss / 互链（→ 身体总是先知道、平静）。
 - **2026·07·04**
