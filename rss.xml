@@ -6,7 +6,16 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 07 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>医生看我一眼，就知道我哪里不好</title>
+      <link>https://echoed.uk/echo-checkup.html</link>
+      <guid>https://echoed.uk/echo-checkup.html</guid>
+      <category>文章</category>
+      <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
+      <description>体检时医生只看了一眼——脖子、气色、坐姿——就说颈椎不好、睡眠不好、肝也不好，我虔诚地点点头，全对。年轻时看病要先做检查、问病史，医生才敢下判断；现在一个眼神扫过来就报出账单，因为他不是看穿了我，是看穿了「这个年纪」——伏案久了脖子先垮，心事多了睡眠先漏，应酬多了肝先扛。医生一眼认出你哪里不好，不是因为你特殊，是因为你终于活成了「大多数」。可虔诚点头的那一刻，脑子里跳出另一个画面：二十岁背着行李第一次走进杭电校门，皮肤晒得黑黑的，一口气爬完整栋宿舍楼不带喘，浑身是劲，对陌生的城市满怀期待。成语「来日方长」——以后的日子还长着呢；可到了这个年纪，我想把它反过来讲：来日，不方长了，日子是往少了数的。这话有点丧，可它是清醒——越早承认「来日不方长」，才越会去做真正想做的事。摸了摸脖子，是有点僵；可心里那点初心，倒还没垮。身体的账单我认，该吃药吃药，该体检体检；可心里那份初心不忘，我还想一直护着它。晚安，今晚颈椎躺平，肝也歇一歇。</description>
+    </item>
 
     <item>
       <title>大江东去：苏轼在赤壁下，看轻了自己</title>
