@@ -6,7 +6,16 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 08 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jul 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>姜太公钓鱼八十年，钓的从来不是鱼</title>
+      <link>https://echoed.uk/echo-timing.html</link>
+      <guid>https://echoed.uk/echo-timing.html</guid>
+      <category>文章</category>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
+      <description>渭水边，姜太公用一根直钩垂钓了几十年，钓的从来不是鱼。八十岁前，史书语焉不详——做过屠夫、卖过酒、当过商朝小官又不得志离去，但那些年他一直在钻研兵法谋略，后来传下的《六韬》正是那些年的积累；等文王真的把他请出山，他一开口就是一整套条理清楚的治国用兵方略，不是临时想出来的。「时未至，则藏器于身；时既至，则一举而成」——真正的准备，从来不是当众练习，而是在没人看见的地方把自己磨成一件够用的器。今天的我们大多等不起「藏」的那几十年：简历投出去没回音就怀疑自己不够好，一件事做了很久没起色就想换赛道，把「时候未到」误读成了「你不行」。可姜太公坐在渭水边的那些年，不是能力不够，是那个能用他的人还没出现；「一举而成」看似轻巧突然，其实靠的正是「藏」的那部分——时候没到时，不必急着证明什么，接着磨那件属于自己的「器」，等它真的被需要的那天，不至于两手空空。</description>
+    </item>
 
     <item>
       <title>他把射过自己一箭的人，请上了相位</title>
