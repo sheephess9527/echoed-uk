@@ -6,7 +6,16 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 09 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jul 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>已经搭进去的，不该决定你还要不要继续</title>
+      <link>https://echoed.uk/echo-sunkcost.html</link>
+      <guid>https://echoed.uk/echo-sunkcost.html</guid>
+      <category>观点</category>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 +0000</pubDate>
+      <description>一张已经付过钱的电影票，坐进去二十分钟就看出难看，多数人还是会坐到散场——理性地说，钱已经花了，跟接下来走不走完全无关，可我们几乎从不这么算账，反而把「已经付出的」错当成「还应该值多少」的证据，这在经济学里叫「沉没成本谬误」。这道算错的账不只发生在电影院和自助餐桌，上世纪六十年代英法联合研发的超音速客机「协和号」也是如此：项目进行到一半双方已看出商业上大概率亏本，可钱投得太多谁也不愿叫停，一路运营近三十年始终没能回本，直到 2003 年黯然退役，经济学后来称这种现象为「协和谬误」。真正该问的问题只有一个：如果今天是第一天、手里没有任何已经投入的东西，你还会不会选择开始或继续这件事——如果答案是不会，那么已经投入很多，非但不是继续的理由，反而该是尽早停下的理由。这不是提倡轻易放弃：一件事该不该继续，答案永远藏在它接下来还能给你什么，跟它已经吃掉你多少无关。</description>
+    </item>
 
     <item>
       <title>姜太公钓鱼八十年，钓的从来不是鱼</title>
