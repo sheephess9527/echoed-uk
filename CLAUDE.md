@@ -14,29 +14,31 @@
 - 每个页面自包含（内联 CSS + 原生 JS），可单独用浏览器打开。
 - 字体经 Google Fonts 引入：思源宋体 Noto Serif SC（中文）+ Fraunces（拉丁字标）。
 
-## 现状（截至 2026·06）
+## 现状（截至 2026·07）
 
 - **已上线**：GitHub Pages 从 `master` 分支根目录发布，线上地址 **https://echoed.uk**（自定义域名已绑定）。早期「建仓库 + 开 Pages」的任务**早已完成**，不要再做。
-- **内容**：约 49 篇回响（`echo-*.html`），完整清单见 README《内容清单》。
+- **内容**：61 篇回响（`echo-*.html`），完整清单见 README《内容清单》。
 
 ## 文件结构
 
 - `index.html` — 首页：回声 Hero（canvas 波纹，可点击）+ 宣言 + 精选回响 + 订阅页脚
 - `explore.html` — 探索回响：按类型（文章 / 观点 / 对话 / 书）筛选的时间线
 - `about.html` — 关于：品牌故事
-- `echo-*.html` — 每篇文章独立成页（含阅读进度条、分享按钮）；当前约 49 篇，清单见 README
+- `echo-*.html` — 每篇文章独立成页（含阅读进度条、分享按钮）；当前 61 篇，清单见 README
 - `README.md` — **完整接手手册**（接手须知 / Runbook / 命令 / 技术备忘 / 作者事实档指引 / 变更记录）
 - `.private-notes.md` — 私人事实档（本地、已 `.gitignore`、**不入库**；写个人记述前先看）
-- `sitemap.xml` · `rss.xml` · `site.webmanifest` · `assets/`（图标 / 启动图 / OG 图）
+- `sitemap.xml` · `rss.xml` · `site.webmanifest` · `assets/`（图标 / 启动图 / 每篇专属 OG 图 `assets/og/`）
+- `tools/` — 维护脚本：`gen_og.py`（生成每篇专属 OG 分享图）、`gen_meta.py`（写 og:image + JSON-LD，幂等）、`gen_sitemap.py`（重生成 `sitemap.xml` 含 `<lastmod>`）；authoring aid，非站点构建步骤，跑不跑都不影响已生成页面
 - `push.sh` — 一键推送脚本
 
 ## 工作流（铁律，细节见 README）
 
-- 开发分支 **`claude/website-review-o0eglu`** → 提交并推送 → `git checkout master && git merge --ff-only` → 推 `master`（触发 Pages 重建，约 1～2 分钟生效）。
+- 开发分支 **`claude/article-writing-8qz6oo`** → 提交并推送 → `git checkout master && git merge --ff-only` → 推 `master`（触发 Pages 重建，约 1～2 分钟生效）。
 - **未经许可不推到其它分支；不主动建 Pull Request。**
 - 本环境**没有 `gh` CLI**；用 `git` + GitHub MCP 工具操作 GitHub。
 - **每次改动后，更新 README《变更记录》。**
-- 新增文章严格照 README《新增一篇文章的完整流程（Runbook）》，并同步 `explore.html` / `sitemap.xml` / `rss.xml` / `README.md`，详情页底部做交叉互链。
+- 新增文章严格照 README《新增一篇文章的完整流程（Runbook）》，并同步 `explore.html` / `rss.xml` / `README.md`；跑 `tools/` 三脚本生成 OG 图 / JSON-LD / sitemap；详情页底部做交叉互链。
+- 合并到 `master` 前建议先 `git fetch origin master` 核对是否有其他会话并行提交的内容，避免快进推送被拒或漏改聚合文件（`explore.html` / `sitemap.xml` / `rss.xml` / `README.md`）。
 
 ## 设计约定（改动时保持一致）
 
