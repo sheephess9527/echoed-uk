@@ -17,14 +17,14 @@
 ## 现状（截至 2026·07）
 
 - **已上线**：GitHub Pages 从 `master` 分支根目录发布，线上地址 **https://echoed.uk**（自定义域名已绑定）。早期「建仓库 + 开 Pages」的任务**早已完成**，不要再做。
-- **内容**：65 篇回响（`echo-*.html`），完整清单见 README《内容清单》。
+- **内容**：66 篇回响（`echo-*.html`），完整清单见 README《内容清单》。
 
 ## 文件结构
 
 - `index.html` — 首页：回声 Hero（canvas 波纹，可点击）+ 宣言 + 精选回响 + 订阅页脚
 - `explore.html` — 探索回响：按类型（文章 / 观点 / 对话 / 书）筛选的时间线
 - `about.html` — 关于：品牌故事
-- `echo-*.html` — 每篇文章独立成页（含阅读进度条、分享按钮）；当前 65 篇，清单见 README
+- `echo-*.html` — 每篇文章独立成页（含阅读进度条、分享按钮）；当前 66 篇，清单见 README
 - `README.md` — **完整接手手册**（接手须知 / Runbook / 命令 / 技术备忘 / 作者事实档指引 / 变更记录）
 - `.private-notes.md` — 私人事实档（本地、已 `.gitignore`、**不入库**；写个人记述前先看）
 - `sitemap.xml` · `rss.xml` · `site.webmanifest` · `assets/`（图标 / 启动图 / 每篇专属 OG 图 `assets/og/`）

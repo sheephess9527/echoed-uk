@@ -23,7 +23,7 @@
 | 关键事实 | 值 |
 | --- | --- |
 | GitHub 仓库 | `sheephess9527/echoed-uk` |
-| 开发分支 | `claude/website-review-o0eglu`（所有改动先提交到这里） |
+| 开发分支 | `claude/article-writing-8qz6oo`（所有改动先提交到这里） |
 | 发布分支 | `master`（GitHub Pages 从 master 根目录发布，约 1～2 分钟生效） |
 | 线上地址 | https://echoed.uk |
 | 沟通语言 | 中文 |
@@ -33,7 +33,7 @@
 
 ## 内容清单
 
-截至目前共 65 篇回响。按发布日期由新到旧排列，类型分为「文章 / 观点 / 对话 / 书」。
+截至目前共 66 篇回响。按发布日期由新到旧排列，类型分为「文章 / 观点 / 对话 / 书」。
 
 ### 个人记述
 
@@ -104,6 +104,7 @@
 
 | 文件 | 标题 | 角度 | 日期 |
 | --- | --- | --- | --- |
+| `echo-placename.html` | 桥早就没了，地名还在 | 带「桥」「渡」「门」的地名 × 桥拆了名字还在：最长命的不是砖石，是一个称呼 | 07·15 |
 | `echo-redcliff.html` | 大江东去：苏轼在赤壁下，看轻了自己 | 苏轼贬黄州游赤壁（文赤壁）× 时间纵深与空间辽阔把荣辱看轻 | 07·07 |
 | `echo-oldroad.html` | 你脚下这条路，比所有人都活得久 | 一条用了两千年的老路 × 地理承载历史的层叠 | 06·21 |
 | `echo-ascend.html` | 他们为什么总爱登高 | 陈子昂登幽州台 × 地理的高度拉开时间纵深 | 06·21 |
@@ -199,7 +200,7 @@ python3 -m http.server 8000
 
 1. **沟通语言**：用中文交流。
 2. **分支与部署**：
-   - 所有改动先在功能分支 `claude/website-review-o0eglu` 上开发、提交、推送。
+   - 所有改动先在功能分支 `claude/article-writing-8qz6oo` 上开发、提交、推送。
    - 再 `git checkout master && git merge --ff-only` 合并到 `master`，推送 `master`。
    - GitHub Pages 从 `master` 根目录发布，约 1～2 分钟生效。**未经许可不推到其它分支。**
    - 推送统一 `git push -u origin <branch>`；网络失败按 2s/4s/8s/16s 退避重试，最多 4 次。
@@ -260,14 +261,14 @@ python3 -m http.server 8000
 
 ```bash
 # 1) 在开发分支提交
-git checkout claude/website-review-o0eglu
+git checkout claude/article-writing-8qz6oo
 git add <改动的文件...>
 git commit -m "<说明：改了什么>"
-git push -u origin claude/website-review-o0eglu
+git push -u origin claude/article-writing-8qz6oo
 
 # 2) 快进合并到 master 并推送（触发 GitHub Pages 重建，约 1～2 分钟生效）
 git checkout master
-git merge --ff-only claude/website-review-o0eglu
+git merge --ff-only claude/article-writing-8qz6oo
 git push origin master
 ```
 
@@ -302,6 +303,8 @@ git push origin master
 ## 变更记录
 
 按时间倒序，记录每一次改动。
+
+- **2026·07·15** — 新增 `echo-placename.html`《桥早就没了，地名还在》（地理与历史感系列，站主点头的两个题目之一；另一篇「种树的人多半看不到树荫」已过审、待写）——带「桥」「渡」「门」「井」的地名，描述的东西早没了，名字却一个不少：拆桥要花钱，拆名字没人负责。两处落点：①地名是一张过期的地图，描述的是它被起名的那一刻；②它活下来不靠保护，靠每天有人念——「光被保存不够，得被使用」（呼应 echo-worn / echo-legacy）。末段做了对照：老地名是记录，××国际之类的新名字是修辞，一个是留下来的，一个是设计出来的。**不做具体地名的沿革考据**，只用站得住的普遍现象。已跑 `tools/` 三脚本。同步 explore / rss / 互链（→ 老路、几万张照片；并回填 echo-oldroad 的下一条指回本篇）。顺带把 README 里 5 处仍写着旧分支 `claude/website-review-o0eglu` 的地方（《接手须知》表格、《协作约定》第 2 条、《提交与上线命令》）统一改成实际在用的 `claude/article-writing-8qz6oo`——上次只改了 `CLAUDE.md`，README 漏了。
 
 - **2026·07·14** — 新增 `echo-hunger.html`《饿的时候，世界会变得很具体》（身体知道系列，站主从两个备选里选定）——饿到一定程度，抽象的烦恼会自己退场，只剩「想吃口热的」；由此看出烦恼是要有余力才养得起的东西，身体不是部件而是底座。落点给的是一件实用的事：看什么都不顺眼时，先别分析自己，先问「我是不是饿了、困了」——很多我们当成「心境」甚至「性格」的东西（下午急躁的同事、晚饭前难哄的孩子），只是身体在报警。**刻意不写成营养学 / 血糖科普**，全篇不出现术语，保持在体感与观察层面（合《协作约定》第 8 条）。已跑 `tools/` 三脚本。同步 explore / rss / 互链（→ 深夜煮面、身体总是先知道；并回填 echo-noodle 的下一条指回本篇）。
 
