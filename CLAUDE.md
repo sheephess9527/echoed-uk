@@ -17,14 +17,14 @@
 ## 现状（截至 2026·07）
 
 - **已上线**：GitHub Pages 从 `master` 分支根目录发布，线上地址 **https://echoed.uk**（自定义域名已绑定）。早期「建仓库 + 开 Pages」的任务**早已完成**，不要再做。
-- **内容**：66 篇回响（`echo-*.html`），完整清单见 README《内容清单》。
+- **内容**：67 篇回响（`echo-*.html`），完整清单见 README《内容清单》。
 
 ## 文件结构
 
 - `index.html` — 首页：回声 Hero（canvas 波纹，可点击）+ 宣言 + 精选回响 + 订阅页脚
 - `explore.html` — 探索回响：按类型（文章 / 观点 / 对话 / 书）筛选的时间线
 - `about.html` — 关于：品牌故事
-- `echo-*.html` — 每篇文章独立成页（含阅读进度条、分享按钮）；当前 66 篇，清单见 README
+- `echo-*.html` — 每篇文章独立成页（含阅读进度条、分享按钮）；当前 67 篇，清单见 README
 - `README.md` — **完整接手手册**（接手须知 / Runbook / 命令 / 技术备忘 / 作者事实档指引 / 变更记录）
 - `.private-notes.md` — 私人事实档（本地、已 `.gitignore`、**不入库**；写个人记述前先看）
 - `sitemap.xml` · `rss.xml` · `site.webmanifest` · `assets/`（图标 / 启动图 / 每篇专属 OG 图 `assets/og/`）
@@ -37,7 +37,7 @@
 - **未经许可不推到其它分支；不主动建 Pull Request。**
 - 本环境**没有 `gh` CLI**；用 `git` + GitHub MCP 工具操作 GitHub。
 - **每次改动后，更新 README《变更记录》。**
-- 写文章时两个踩过的坑：① 从上一篇复制模板后，**先剥掉旧的 JSON-LD 块**再做「描述串全局替换」——JSON-LD 里也有一份 description，否则 4 处会变成 5 处；`gen_meta.py` 会按新 meta 重新生成，剥掉无妨。② 容器里的 **Pillow 经常丢**，`gen_og.py` 跑不了就先 `pip install Pillow`；若实在生成不了，按 README 把本篇 `og:image`/`twitter:image` 改回通用的 `assets/og-image.png`，以免分享卡片裂图。
+- 写文章时两个踩过的坑：① 从上一篇复制模板后，**先剥掉旧的 JSON-LD 块**再做「描述串全局替换」——JSON-LD 里也有一份 description，否则 4 处会变成 5 处；`gen_meta.py` 会按新 meta 重新生成，剥掉无妨。② `gen_og.py` 报 `No module named 'PIL'` 时，**别用 `pip install Pillow`**——本容器里 `pip` 绑定 python3.13，而 `python3` 指向 3.11，装了也导入不到。用 **`python3 -m pip install Pillow`**（保证同一解释器）；若实在生成不了，按 README 把本篇 `og:image`/`twitter:image` 改回通用的 `assets/og-image.png`，以免分享卡片裂图。
 - **标题别用同一个句式**：站内已有大量「A，其实是/不是 B」「A 的时候，B」这类两段式倒装标题。动笔前扫一眼最近 10 篇的标题，换个句式（简短陈述 / 疑问 / 人格化 / 并列对比……），别让读者觉得一个模子刻的。
 - 新增文章严格照 README《新增一篇文章的完整流程（Runbook）》，并同步 `explore.html` / `rss.xml` / `README.md`；跑 `tools/` 三脚本生成 OG 图 / JSON-LD / sitemap；详情页底部做交叉互链。
 - 合并到 `master` 前建议先 `git fetch origin master` 核对是否有其他会话并行提交的内容，避免快进推送被拒或漏改聚合文件（`explore.html` / `sitemap.xml` / `rss.xml` / `README.md`）。
