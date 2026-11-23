@@ -897,11 +897,18 @@
 </script>
 <script>
   function subscribe(btn){
-    var input=btn.previousElementSibling;
-    var ok=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test((input.value||'').trim());
-    if(!ok){input.focus();input.style.borderColor='rgba(240,179,94,.7)';return;}
-    input.disabled=true;btn.disabled=true;btn.style.opacity='.7';
-    btn.textContent='已收到 ✓';
+    var input=btn.previousElementSibling,email=(input.value||'').trim();
+    if(email.length>254||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){input.focus();input.style.borderColor='rgba(240,179,94,.7)';return;}
+    var label=btn.getAttribute('data-label')||btn.textContent;btn.setAttribute('data-label',label);
+    input.disabled=true;btn.disabled=true;btn.style.opacity='.7';btn.textContent='提交中…';
+    fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,source:location.pathname})})
+      .then(function(r){return r.json().catch(function(){return {};}).then(function(d){if(!r.ok||!d.ok)throw d;btn.textContent='已收到 ✓';});})
+      .catch(function(d){
+        input.disabled=false;btn.disabled=false;btn.style.opacity='';
+        btn.textContent=d&&d.error==='invalid_email'?'邮箱有误':'没存上，请重试';
+        if(d&&d.error==='invalid_email'){input.style.borderColor='rgba(240,179,94,.7)';input.focus();}
+        setTimeout(function(){if(!btn.disabled)btn.textContent=label;},2500);
+      });
   }
 </script>
 

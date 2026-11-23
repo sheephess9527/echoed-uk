@@ -10,13 +10,13 @@
 
 ## 技术栈
 
-- 纯静态 HTML，**无构建步骤、无依赖、无框架**。
+- 纯静态 HTML，**无构建步骤、无依赖、无框架**。唯一的服务端代码是 `worker/index.js`（Cloudflare Worker，只处理 `/api/subscribe`，把订阅邮箱存进 D1），其余请求直接返回静态文件。
 - 每个页面自包含（内联 CSS + 原生 JS），可单独用浏览器打开。
 - 字体经 Google Fonts 引入：思源宋体 Noto Serif SC（中文）+ Fraunces（拉丁字标）。
 
 ## 现状（截至 2026·07）
 
-- **已上线**：GitHub Pages 从 `master` 分支根目录发布，线上地址 **https://echoed.uk**（自定义域名已绑定）。早期「建仓库 + 开 Pages」的任务**早已完成**，不要再做。
+- **已上线**：线上地址 **https://echoed.uk** 由 Cloudflare Workers Builds 从 `master` 自动部署（配置 `wrangler.jsonc`，Worker 名 `echoed-uk`）；GitHub Pages 也从 `master` 构建，但只在 github.io 子路径、没有订阅接口。早期「建仓库 + 开 Pages」的任务**早已完成**，不要再做。
 - **内容**：96 篇回响（`echo-*.html`），完整清单见 README《内容清单》。
 
 ## 文件结构
@@ -30,6 +30,7 @@
 - `sitemap.xml` · `rss.xml` · `site.webmanifest` · `assets/`（图标 / 启动图 / 每篇专属 OG 图 `assets/og/`）
 - `tools/` — 维护脚本：`gen_og.py`（生成每篇专属 OG 分享图）、`gen_meta.py`（写 og:image + JSON-LD，幂等）、`gen_sitemap.py`（重生成 `sitemap.xml` 含 `<lastmod>`）；authoring aid，非站点构建步骤，跑不跑都不影响已生成页面
 - `push.sh` — 一键推送脚本
+- `worker/index.js` · `wrangler.jsonc` · `.assetsignore` — 订阅接口（`POST /api/subscribe` → D1 库 `echoed-uk-subscribers`）与部署配置；细节见 README《部署》《技术实现备忘》
 
 ## 工作流（铁律，细节见 README）
 
@@ -73,5 +74,6 @@
 ## 待办（内容侧）
 
 - [ ] 把样例点评替换为真实内容
-- [ ] 订阅框接入邮件服务（Buttondown / Substack / ConvertKit）
+- [x] 订阅框真正保存邮箱（Cloudflare D1）
+- [ ] 给订阅者发信（尚未接发信服务）
 - [ ] 替换页脚的社交 / 邮箱链接

@@ -5,3 +5,7 @@ node_modules/
 
 # 私人事实档：仅本地保存，不入公开仓库
 .private-notes.md
+
+# wrangler 本地文件
+.wrangler
+.dev.vars*
