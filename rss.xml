@@ -6,8 +6,16 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 22 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 00:00:00 +0000</lastBuildDate>
 
+    <item>
+      <title>船，是怎么翻过一座山的？</title>
+      <link>https://echoed.uk/echo-lingqu.html</link>
+      <guid>https://echoed.uk/echo-lingqu.html</guid>
+      <category>文章</category>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <description>两千多年前，秦人在今天桂林兴安，用一条三十多公里的灵渠，把北流的湘江和南流的漓江接了起来。中间隔着一道分水岭，渠里的落差陡得行不了船。后来的办法是在渠里砌一道道陡门，把一个大落差，拆成许多个船能过的小台阶。</description>
+    </item>
     <item>
       <title>那一夜的船，不算白划</title>
       <link>https://echoed.uk/echo-snowboat.html</link>
