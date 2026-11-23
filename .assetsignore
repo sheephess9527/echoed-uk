@@ -1,0 +1,7 @@
+.git
+.wrangler
+node_modules
+worker
+wrangler.jsonc
+.dev.vars*
+.private-notes.md

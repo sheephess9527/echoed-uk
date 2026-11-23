@@ -208,19 +208,27 @@ python3 -m http.server 8000
 # 浏览器访问 http://localhost:8000
 ```
 
+上面两种方式没有 `/api/subscribe`，订阅框会显示「没存上，请重试」。要连订阅一起测，用 Wrangler 本地跑（本地 D1，不碰线上数据）：
+
+```bash
+npx wrangler dev            # 浏览器访问 http://localhost:8787
+npx wrangler d1 execute echoed-uk-subscribers --local --command "SELECT * FROM subscribers"
+```
+
 ## 部署
 
-任意静态托管都可以。当前通过 **GitHub Pages 从 `master` 分支根目录** 发布——推送到 `master` 后会自动重新构建，约 1～2 分钟后生效。
+线上 **https://echoed.uk 由 Cloudflare Workers 提供**：Workers Builds 连着本仓库，推送到 `master` 后自动 `wrangler deploy`（Worker 名 `echoed-uk`，配置见根目录 `wrangler.jsonc`），约 1～2 分钟后生效。页面仍是静态文件（`assets.directory` 为仓库根目录，`.assetsignore` 排除 `worker/`、`wrangler.jsonc`、`.git` 等不该公开托管的文件）；只有 `/api/*` 先进 `worker/index.js`。
 
-- **GitHub Pages**：仓库 Settings → Pages → Source 选 `master` 分支根目录 → 保存。
-- **Cloudflare Pages**：连接此仓库，构建命令留空，输出目录填 `/`。
+- **GitHub Pages** 也在从 `master` 根目录构建，但没有绑自定义域名，只在 `sheephess9527.github.io/echoed-uk` 上；那里没有 `/api/subscribe`，订阅框会提示保存失败。
+- **订阅存储**：Cloudflare D1 数据库 `echoed-uk-subscribers`（binding `DB`，免费额度内）。`wrangler.jsonc` 只写了库名、没写 `database_id`——首次部署时 Wrangler 会按库名自动创建（或沿用已有的同名库）并绑定，表 `subscribers` 由 Worker 在首次写入时自动建。若 Workers Builds 日志报没权限创建 D1：在 Cloudflare 后台 Storage & Databases → D1 手动建一个名为 `echoed-uk-subscribers` 的库，把它的 Database ID 填进 `wrangler.jsonc` 的 `d1_databases[0].database_id`，再推一次。
 
 绑定自定义域名 `echoed.uk` 后，把 DNS 指向托管商即可。`push.sh` 为一键推送脚本。
 
 ## 待办（内容侧）
 
 - [ ] 把样例点评替换为真实内容
-- [ ] 订阅框接入邮件服务（Buttondown / Substack / ConvertKit）
+- [x] 订阅框真正保存邮箱（存进 Cloudflare D1，见《技术实现备忘》）
+- [ ] 给订阅者发信（还没接任何发信服务；名单在 D1 里，需要时导出）
 - [x] 补充 `rss.xml` 与 `sitemap.xml`
 - [ ] 替换页脚的社交 / 邮箱链接
 
@@ -326,6 +334,9 @@ git push origin master
     ```
 - **结构化数据**：每篇 `<head>` 末尾有一段 `Article` JSON-LD（标题/描述/发布时间/作者/图片/URL），由 `tools/gen_meta.py` 生成，利于搜索收录与富摘要。
 - **维护脚本（`tools/`，authoring aid，非站点构建步骤）**：`gen_og.py`（OG 图）、`gen_meta.py`（og:image + JSON-LD，幂等）、`gen_sitemap.py`（重生成 `sitemap.xml` 含 `<lastmod>`）。站点本身仍是**直接托管的纯静态 HTML**，这些脚本只是写文章时的辅助，跑不跑都不影响已生成的页面。
+- **订阅框**（`index.html` / `explore.html` / `about.html` 页脚，页内函数 `subscribe(btn)`）：前端校验后 `POST /api/subscribe`（JSON：`email`、`source`=当前路径），**只有服务端确认存下才显示「已收到 ✓」**，重复订阅显示「已订阅过 ✓」，失败显示「没存上，请重试」并可重填。服务端是 `worker/index.js`：同源检查（带 `Origin` 时须与本站一致）、邮箱格式与长度（≤254）校验、小写去空格后以邮箱为主键 `INSERT … ON CONFLICT DO NOTHING` 去重；只存邮箱、时间、来源页，不存 IP。改订阅逻辑要三页一起改。
+  - 查看 / 导出名单：Cloudflare 后台 D1 → `echoed-uk-subscribers` → Console 跑 `SELECT * FROM subscribers ORDER BY created_at DESC;`，或本机 `npx wrangler d1 execute echoed-uk-subscribers --remote --command "SELECT * FROM subscribers"`。
+  - 退订：目前没有退订入口，收到退订请求时手动 `DELETE FROM subscribers WHERE email = '…';`。
 - **发布日期**：写在 `article:published_time` 和正文 meta 行；`sitemap.xml` 的 `<lastmod>` 由 `gen_sitemap.py` 按此填。当前节奏约每天一篇，显示日期可比真实日期略提前（站主认可）。
 
 ## 作者事实档（个人记述的事实基准）
@@ -341,6 +352,7 @@ git push origin master
 
 按时间倒序，记录每一次改动。
 
+- **2026·11·23** — 订阅框真正保存邮箱：此前 `subscribe()` 只在前端把按钮改成「已收到 ✓」，什么都没存。新增 `worker/index.js` + `wrangler.jsonc`（Worker 名沿用 `echoed-uk`，静态资源照旧由仓库根目录提供，只有 `/api/*` 走 Worker）与 `.assetsignore`；`POST /api/subscribe` 校验、去重后写入 Cloudflare D1 库 `echoed-uk-subscribers` 表 `subscribers`（免费额度内，不接第三方服务）。三页订阅函数改为等服务端确认后才显示成功，重复订阅 / 失败各有提示。顺带更正《部署》：线上 echoed.uk 实际由 Cloudflare Workers Builds 从 `master` 部署，GitHub Pages 只在 github.io 子路径上。发信尚未接入，见《待办》。
 - **2026·11·23** — 新增 `echo-lingqu.html`《船，是怎么翻过一座山的？》（地理与历史感，定时任务自动发布）——选线：昨天通晓古今，本线上次 11·09。切口：灵渠让船翻过湘漓分水岭。核对：《淮南子·人间训》「使监禄无以转饷，又以卒凿渠而通粮道」对过维基文库；修成约前 214 年、铧嘴/大小天平、唐十八明三十六清三十二陡门、二十多次大修、三十年代铁路通车后航运渐停，据维基百科灵渠条。分寸：「湘七漓三」写明是说法非定数；陡门始于秦还是唐来源矛盾，正文明写不写死。标题用疑问句式避开两段式。同步 explore / rss / 互链（→ 水先选了路、海图上的水深）。
 - **2026·11·22** — 新增 `echo-snowboat.html`《那一夜的船，不算白划》（通晓古今，定时任务自动发布；11·13 之后停更，今天恢复）——选线：「通晓古今」自 10·22 起一个月未动，最近三篇是对话、微光、身体，不连线。切口：《世说新语·任诞》王子猷雪夜访戴，原文全引。三层：①事情本身（山阴即今绍兴，剡即今嵊州一带）；②按终点记账则是白跑，他按出发的理由记账；③分寸：任诞门本收放达之事，附「何可一日无此君」一条，并点出他有家世与闲、以及戴逵并不知情；落点：起头的理由与收尾的标准常被换掉，按出发的理由记账，很多「白跑」其实已经到了。核对：原文据维基文库《世说新语·任诞》逐字核对。**刻意没写的**：具体航程里数（没查到可靠数字）。同步 explore / rss / 互链（→ 姜太公钓鱼、古人的已读不回）。
 - **2026·11·13** — 新增 `echo-dark.html`《眼睛换班，要半个钟头》（身体知道，定时任务自动发布）——选线：并列 8 篇的几条线里「身体知道」最久未动（上次 11·07）；时节上接着昨天「天黑得早」。切口：从亮屋走到暗处「适应了」其实分两段。四层：①视锥（管亮处）先恢复，五到十分钟到头、曲线走平——这就是「差不多适应了」的那一刻；②视杆（管暗处、灵敏得多）要在暗里重新攒感光物质，二三十分钟才接上、到底约四十分钟，曲线是「降—平—再降」带拐点的两段，平的那截是交接不是终点；这笔账**攒得慢花得快**，中途亮一下屏幕就得重等；③视网膜正中央一根视杆也没有、视杆最密在偏开中心的一圈，所以暗星正眼盯着会消失、挪开一点才出来（余光看）；④落点：在暗处「这里什么也没有」和「我还没等够」头十分钟里看上去一模一样，而最容易下结论的恰是第一套刚到头、进步刚停的时候——陌生材料、新地方的平台期同理，光看「不再进步」分不出是到底了还是慢的那套没接上；可做的事：走夜路看星给眼睛半个钟头、中途别看手机，平台期下结论前先问待的时间够不够慢的那套上来。收在「**看不见有两种：那里没有，或者还没等够。头十分钟，这两种分不出来**」。核对：暗适应曲线两段、视锥段 5–10 分钟后走平、视杆段 20–30 分钟、约 40 分钟到绝对阈值、中央凹无视杆且视杆密度峰值在偏心一圈、观星用余光，均经检索确认。**刻意没写的**：「红光不破坏夜视」——广为流传，但这次检索没拿到直接支持的可靠表述，不写；年龄对暗适应的影响同样未核，正文的分寸只说到「因人、因先前照过多亮的光而不同」。「攒得慢花得快」一句依据的是感光色素见光分解、暗中再生这一通行机制，表述从宽。同步 explore / rss / 互链（→ 牵涉痛、冬至还没到；并回填 echo-referred 的下一条指回本篇）。
