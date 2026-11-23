@@ -60,7 +60,7 @@ async function subscribe(request, env, url) {
   if (!env.DB) return json(503, { ok: false, error: 'storage_unavailable' });
   try {
     const result = await insert(env.DB, email, source);
-    return json(200, { ok: true, duplicate: result.meta.changes === 0 });
+    return json(200, { ok: true });
   } catch (err) {
     console.error('subscribe insert failed', err);
     return json(500, { ok: false, error: 'storage_error' });
