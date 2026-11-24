@@ -6,8 +6,16 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 23 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 00:00:00 +0000</lastBuildDate>
 
+    <item>
+      <title>读《考工记》：一张弓，要做一整年</title>
+      <link>https://echoed.uk/echo-kaogong.html</link>
+      <guid>https://echoed.uk/echo-kaogong.html</guid>
+      <category>书</category>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <description>《考工记》说好东西要四样凑齐：天时、地气、好料、巧手。料好手巧还做坏了，它说缺的是前两样。讲做弓那一段更细：冬天剖木，春天泡角，夏天治筋，秋天合起来，一张弓要走完一整年。想省掉这一年的工匠，做出来的弓外面看着好，里面在动。</description>
+    </item>
     <item>
       <title>船，是怎么翻过一座山的？</title>
       <link>https://echoed.uk/echo-lingqu.html</link>
