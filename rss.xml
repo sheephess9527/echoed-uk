@@ -6,8 +6,16 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 24 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 00:00:00 +0000</lastBuildDate>
 
+    <item>
+      <title>雪把声音收走了</title>
+      <link>https://echoed.uk/echo-snowhush.html</link>
+      <guid>https://echoed.uk/echo-snowhush.html</guid>
+      <category>文章</category>
+      <pubDate>Wed, 25 Nov 2026 00:00:00 +0000</pubDate>
+      <description>下了一夜雪，早上推开窗，外面静得不像平常。不是车少了，是雪把声音收走了。新雪松，里面全是小孔，声音钻进去，在孔里来回撞，变成一点点热。一层厚的新雪，能把近处马路的声音吃掉大半。可这份安静有期限：雪一压实、一结壳，它就不收了。</description>
+    </item>
     <item>
       <title>读《考工记》：一张弓，要做一整年</title>
       <link>https://echoed.uk/echo-kaogong.html</link>
