@@ -6,8 +6,16 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 26 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 00:00:00 +0000</lastBuildDate>
 
+    <item>
+      <title>石塘保一年，土塘保三年</title>
+      <link>https://echoed.uk/echo-seawall.html</link>
+      <guid>https://echoed.uk/echo-seawall.html</guid>
+      <category>文章</category>
+      <pubDate>Fri, 27 Nov 2026 00:00:00 +0000</pubDate>
+      <description>清代浙江海塘有一条规矩：新修的土备塘保固三年，条石塘只保一年，抢修的草塘保三个月；期限内塌了，修的人自己赔，人不在了，子孙接着赔。石塘不是更不结实，是它站在潮头上。</description>
+    </item>
     <item>
       <title>身体的表，喜欢往后拨</title>
       <link>https://echoed.uk/echo-eastward.html</link>
