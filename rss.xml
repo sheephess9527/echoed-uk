@@ -6,8 +6,16 @@
     <atom:link href="https://echoed.uk/rss.xml" rel="self" type="application/rss+xml"/>
     <description>一个安静的个人策展站。共鸣 &gt; 噪音 · 深度 &gt; 广度 · 持久 &gt; 短暂。只在有真正值得分享的东西时，才发出一次回响。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 27 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 00:00:00 +0000</lastBuildDate>
 
+    <item>
+      <title>何夜无月？</title>
+      <link>https://echoed.uk/echo-chengtian.html</link>
+      <guid>https://echoed.uk/echo-chengtian.html</guid>
+      <category>文章</category>
+      <pubDate>Sat, 28 Nov 2026 00:00:00 +0000</pubDate>
+      <description>元丰六年十月十二日夜，苏轼在黄州解衣欲睡，看见月光照进门，起身去承天寺找张怀民。全篇八十多个字，最要紧的是最后一句：哪一夜没有月亮，哪里没有竹柏，少的只是两个闲人。</description>
+    </item>
     <item>
       <title>石塘保一年，土塘保三年</title>
       <link>https://echoed.uk/echo-seawall.html</link>
